@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
-import {MatGridListModule} from '@angular/material/grid-list';
+import {MatCardModule} from '@angular/material/card';
 
 import {MatTableModule} from '@angular/material/table';
 
@@ -13,11 +13,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './components/header/header.component';
+import { ContentComponent } from './components/content/content.component';
+import { FilterComponent } from './components/content/filter/filter.component';
+import { ListComponent } from './components/content/list/list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    ContentComponent,
+    FilterComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +34,7 @@ import { HeaderComponent } from './components/header/header.component';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    MatGridListModule
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

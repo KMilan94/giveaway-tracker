@@ -1,0 +1,11 @@
+<!-- Card: https://material.angular.io/components/card/overview -->
+<div class="container">
+    <mat-card *ngFor="let giveaway of giveaways" class="example-card">
+        <img mat-card-image src="{{ giveaway.image }}" alt="image failed to load">
+        <mat-card-content>
+            <p>
+                {{ giveaway.description }}
+            </p>
+        </mat-card-content>
+    </mat-card>
+</div>
