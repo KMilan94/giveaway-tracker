@@ -1,8 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
 
+:root {
+    --background: #222831; 
+    --foreground-dark: #393E46;
+    --foreground-light: #00ADB5;
+    --grey: #6D8299;
+    --primary: #EEEEEE;
+}
+
 html, body { height: 100%; }
 body { 
     margin: 0; 
     font-family: Roboto, "Helvetica Neue", sans-serif;
-    background-color: #303030;
+    background-color: var(--background);
+    color: var(--primary);
+}
+
+body::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+}
+  
+body::-webkit-scrollbar-track {
+    background: var(--foreground-dark);        /* color of the tracking area */
+}
+  
+body::-webkit-scrollbar-thumb {
+    background-color: var(--primary);    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid var(--foreground-dark);  /* creates padding around scroll thumb */
 }

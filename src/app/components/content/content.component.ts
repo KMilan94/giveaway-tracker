@@ -9,11 +9,10 @@ import { ApiService } from '../../services/api.service';
 })
 export class ContentComponent {
   public giveAways!: Giveaway[];
-  displayedColumns: string[] = ['description', 'status', 'title'];
   
   public constructor(private apiService: ApiService) {
     this.apiService.getGiveaways().subscribe((giveAways: Giveaway[]) => {
-      console.log('Giveaways: ', giveAways[0]);
+      console.log('Giveaways: ', giveAways);
       this.giveAways = giveAways;
     })
   }
