@@ -1,8 +1,13 @@
-.spacer {
+mat-toolbar {
+  background-color: var(--foreground-dark);
+
+  .spacer {
     flex: 1 1 auto;
   }
-  
-  mat-toolbar {
-    height: 3rem;
-    background-color: var(--foreground-light);
+
+  .title {
+    color: var(--white);
+    font-weight: bold;
+    font-size: 1.5rem;
   }
+}

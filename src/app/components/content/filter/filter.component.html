@@ -1,1 +1,26 @@
-<p>filter works!</p>
+<div class="filter-container">
+    <label class="category-title">Platforms</label>
+    <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+        [(ngModel)]="selectedPlatform">
+        <mat-radio-button class="example-radio-button" *ngFor="let platform of platforms | keyvalue" 
+            [value]="platform.key">
+            {{ platform.value.name }} ({{ platform.value.count || 0 }})
+        </mat-radio-button>
+    </mat-radio-group>
+
+    <label class="category-title">Type</label>
+    <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+        [(ngModel)]="selectedType">
+        <mat-radio-button class="example-radio-button" *ngFor="let type of types | keyvalue" [value]="type.key">
+            {{ type.value.name }} ({{ type.value.count || 0 }})
+        </mat-radio-button>
+    </mat-radio-group>
+
+    <label class="category-title">State</label>
+    <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+        [(ngModel)]="selectedState">
+        <mat-radio-button class="example-radio-button" *ngFor="let state of states | keyvalue" [value]="state.key">
+            {{ state.value.name }} ({{ state.value.count || 0 }})
+        </mat-radio-button>
+    </mat-radio-group>
+</div>

@@ -12,7 +12,6 @@ export class ContentComponent {
   
   public constructor(private apiService: ApiService) {
     this.apiService.getGiveaways().subscribe((giveAways: Giveaway[]) => {
-      console.log('Giveaways: ', giveAways);
       this.giveAways = giveAways;
     })
   }

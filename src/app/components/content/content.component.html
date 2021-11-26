@@ -1,9 +1,7 @@
 <div class="content">
-    <!--
-    <div class="content__filter">
-        <app-filter></app-filter>
+    <div class="content__filter" fxShow fxHide.sm fxHide.xs>
+        <app-filter [giveaways]="giveAways"></app-filter>
     </div>
-    -->
     <div class="content__list">
         <app-list [giveaways]="giveAways"></app-list>
     </div>
