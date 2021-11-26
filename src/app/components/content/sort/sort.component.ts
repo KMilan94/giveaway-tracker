@@ -1,5 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { Giveaway } from 'src/app/models/giveaway';
+import { ApiService, SortType } from 'src/app/services/api.service';
+
+type SortModel = {
+  name: string;
+  icon: string;
+}
 
 @Component({
   selector: 'app-sort',
@@ -10,15 +16,28 @@ export class SortComponent {
 
   @Input() public giveaways!: Giveaway[];
 
-  public selectedSort = 'none';
-  public sortOptions: {[key: string]: string} = {
-    'none': 'None',
-    'date': 'Date',
-    'value': 'Value',
-    'popularity': 'Popularity'
+  public selectedSort = this.apiService.selectedSort;
+  public sortOptions: {[key: string]: SortModel} = {
+    'date': {
+      name: 'Date',
+      icon: 'date_range'
+    },
+    'value': { 
+      name: 'Value',
+      icon: 'attach_money'
+    }, 
+    'popularity': {
+      name: 'Popularity',
+      icon: 'timeline' 
+    }
   }
 
+  public constructor(private apiService: ApiService) { }
+
   public setSort(sortType: string): void {
-    this.selectedSort = sortType;
+    if(sortType != this.selectedSort) {
+      this.selectedSort = this.apiService.selectedSort = sortType as SortType;
+      this.apiService.fetchGiveaways();
+    }
   }
 }

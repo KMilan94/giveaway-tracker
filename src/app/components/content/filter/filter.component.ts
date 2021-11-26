@@ -16,7 +16,11 @@ export class FilterComponent {
   @Input() public giveaways!: Giveaway[];
 
   public selectedPlatform = 'pc';
+  public platformsExpanded = false;
   public platforms: {[key: string]: FilterModel} = {
+      'all': {
+        name: 'All'
+      },
       'pc': {
         name: 'PC'
       },
@@ -86,16 +90,6 @@ export class FilterComponent {
     }
   }
 
-  public selectedState = 'active';
-  public states: {[key: string]: FilterModel} = {
-    'active': {
-      name: 'Active'
-    },
-    'inactive': {
-      name: 'Inactive'
-    }
-  }
-
   ngOnChanges(changes: SimpleChanges) {
     if(changes['giveaways'].currentValue) {
       console.log(changes['giveaways'].currentValue.length);
@@ -118,16 +112,14 @@ export class FilterComponent {
           }
         }
       );
-
-      Object.entries(this.states).forEach(
-        ([key, value]) => {
-          const occurance = changes['giveaways'].currentValue.filter((giveaway: Giveaway) => giveaway.status.includes(value.name)).length || 0;
-          this.states[key] = {
-            ...this.states[key],
-            count: occurance
-          }
-        }
-      );
     }
+  }
+
+  public getCount(dict: {[key: string]: FilterModel}): number {
+    return Object.keys(dict).length;
+  }
+
+  public togglePlatforms(): void {
+    this.platformsExpanded = !this.platformsExpanded;
   }
 }

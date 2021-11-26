@@ -1,16 +1,17 @@
 <div class="sort" fxFlex fxLayoutAlign="space-between">
     <div class="results" fxLayout="column" fxLayoutAlign="center">
-        Results: {{ giveaways.length || 0 }}
+        Results found: {{ giveaways.length || 0 }}
     </div>
 
     <div class="sort-area">
         <button mat-button [matMenuTriggerFor]="menu">
-            <mat-icon aria-hidden="false" aria-label="Sort icon">sort</mat-icon>
-            Sort by: {{ sortOptions[selectedSort] }}
+            <mat-icon aria-hidden="false">sort</mat-icon>
+            Sort by: {{ sortOptions[selectedSort].name }}
         </button>
         <mat-menu #menu="matMenu">
             <button mat-menu-item *ngFor="let sortOption of sortOptions | keyvalue" (click)="setSort(sortOption.key)">
-                {{ sortOption.value }}
+                <mat-icon aria-hidden="false">{{ sortOption.value.icon }}</mat-icon>
+                {{ sortOption.value.name }}
             </button>
         </mat-menu>
     </div>
