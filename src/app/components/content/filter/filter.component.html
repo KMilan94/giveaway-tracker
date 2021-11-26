@@ -3,12 +3,12 @@
     <label class="category-title">Platforms</label>
     <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
         [(ngModel)]="selectedPlatform">
-        <mat-radio-button class="example-radio-button" [value]="platform.key"
+        <mat-radio-button class="example-radio-button" [value]="platform.key" (click)="setPlatform(platform.key)"
             *ngFor="let platform of platforms | keyvalue | slice: 0 : platformsExpanded ? getCount(platforms) : 5">
             {{ platform.value.name }} ({{ platform.value.count || 0 }})
         </mat-radio-button>
     </mat-radio-group>
-    
+
     <button mat-button class="show-hide" (click)="togglePlatforms()">
         {{ platformsExpanded ? 'Show less' : 'Show more' }}
         <mat-icon>
@@ -17,9 +17,9 @@
     </button>
 
     <label class="category-title">Type</label>
-    <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
-        [(ngModel)]="selectedType">
-        <mat-radio-button class="example-radio-button" *ngFor="let type of types | keyvalue" [value]="type.key">
+    <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" [(ngModel)]="selectedType">
+        <mat-radio-button class="example-radio-button" *ngFor="let type of types | keyvalue"
+            (click)="setGameType(type.key)" [value]="type.key">
             {{ type.value.name }} ({{ type.value.count || 0 }})
         </mat-radio-button>
     </mat-radio-group>

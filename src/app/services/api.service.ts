@@ -1,17 +1,22 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 import { Giveaway } from '../models/giveaway';
 
-export type SortType = 'none' | 'date' | 'value' | 'popularity';
+export type SortType = 'date' | 'value' | 'popularity';
+export type PlatformType = 'all' | 'pc' | 'steam' | 'epic-games-store' | 'ubisoft' | 'gog' | 'itchio' | 'ps4' | 'ps5' 
+| 'xbox-one' | 'xbox-series-xs' | 'switch' | 'android' | 'ios' | 'vr' | 'battlenet' | 'origin' | 'drm-free' | 'xbox-360';
+export type GameType = 'all' | 'game' | 'loot' | 'beta';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-
   public giveaways$ = new BehaviorSubject<Giveaway[]>([]);
+
+  public selectedPlatform: PlatformType = 'all';
+  public selectedType: GameType = 'all';
   public selectedSort: SortType = 'popularity';
 
   public constructor(private http: HttpClient) {
@@ -19,13 +24,17 @@ export class ApiService {
   }
 
   public fetchGiveaways(): void {
-    this.http.get<Giveaway[]>(`https://gamerpower.p.rapidapi.com/api/giveaways?sort-by=${this.selectedSort}`, {
+    const sortParam = `sort-by=${this.selectedSort}`;
+    const platformParam = this.selectedPlatform === 'all' ? '' : `platform=${this.selectedPlatform}`;
+    const typeParam = this.selectedType === 'all' ? '' : `type=${this.selectedType}`;
+
+    this.http.get<Giveaway[]>(`https://gamerpower.p.rapidapi.com/api/giveaways?${sortParam}&${platformParam}&${typeParam}`, {
       headers: {
         'x-rapidapi-host': 'gamerpower.p.rapidapi.com',
         'x-rapidapi-key': 'e675b0c6damsh1d075ad3910cd0bp19c1e9jsn8a402ca06cc0'
       }
     }).subscribe((giveAways: Giveaway[]) => {
-      this.giveaways$.next(giveAways);
+        this.giveaways$.next(giveAways);
     });
   }
 }

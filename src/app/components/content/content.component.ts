@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+
 import { Giveaway } from '../../models/giveaway';
 import { ApiService } from '../../services/api.service';
 
@@ -17,7 +18,6 @@ export class ContentComponent implements OnInit, OnDestroy {
   public ngOnInit(): void {
     this.subscriptions = [
       this.apiService.giveaways$.subscribe((giveaways: Giveaway[]) => {
-          console.log('Giveaways: ', giveaways);
           this.giveAways = giveaways;
       })
     ]
