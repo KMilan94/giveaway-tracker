@@ -11,8 +11,8 @@ export class ApiService {
 
   public constructor(private http: HttpClient) { }
 
-  public getGiveaways(): Observable<Giveaway[]> {
-    return this.http.get<Giveaway[]>('https://gamerpower.p.rapidapi.com/api/giveaways', {
+  public getGiveaways(sortType = 'none'): Observable<Giveaway[]> {
+    return this.http.get<Giveaway[]>(`https://gamerpower.p.rapidapi.com/api/giveaways?sort-by=${sortType}`, {
       headers: {
         'x-rapidapi-host': 'gamerpower.p.rapidapi.com',
         'x-rapidapi-key': 'e675b0c6damsh1d075ad3910cd0bp19c1e9jsn8a402ca06cc0'

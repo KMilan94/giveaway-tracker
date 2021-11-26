@@ -12,6 +12,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatFormFieldModule,} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatMenuModule} from '@angular/material/menu';
 
 import {MatTableModule} from '@angular/material/table';
 
@@ -22,6 +23,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { ContentComponent } from './components/content/content.component';
 import { FilterComponent } from './components/content/filter/filter.component';
 import { ListComponent } from './components/content/list/list.component';
+import { SortComponent } from './components/content/sort/sort.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import { ListComponent } from './components/content/list/list.component';
     HeaderComponent,
     ContentComponent,
     FilterComponent,
-    ListComponent
+    ListComponent,
+    SortComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +49,8 @@ import { ListComponent } from './components/content/list/list.component';
     MatTooltipModule,
     MatFormFieldModule,
     MatInputModule,
-    MatRadioModule
+    MatRadioModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
