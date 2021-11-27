@@ -2,7 +2,7 @@
 <div class="grid-container">
     <div fxLayout="row wrap" fxLayoutGap="16px grid">
         <div fxFlex="33%" fxFlex.xs="100%" fxFlex.sm="50%" *ngFor="let giveaway of giveaways">
-            <mat-card>
+            <mat-card routerLink="/details/{{ giveaway.id }}">
                 <img mat-card-image src="{{ giveaway.image }}" alt="image failed to load">
                 <mat-card-title>{{ giveaway.title }}</mat-card-title>
                 <mat-card-subtitle>{{ giveaway.type }}</mat-card-subtitle>
@@ -14,7 +14,7 @@
                         <span class="free">
                             FREE
                         </span>
-                        <span class="worth">
+                        <span class="worth" [class.na]="giveaway.worth === 'N/A'">
                             {{ giveaway.worth }}
                         </span>
                     </p>

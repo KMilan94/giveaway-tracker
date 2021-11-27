@@ -5,8 +5,8 @@ import { HttpClient } from '@angular/common/http';
 import { Giveaway } from '../models/giveaway';
 
 export type SortType = 'date' | 'value' | 'popularity';
-export type PlatformType = 'all' | 'pc' | 'steam' | 'epic-games-store' | 'ubisoft' | 'gog' | 'itchio' | 'ps4' | 'ps5' 
-| 'xbox-one' | 'xbox-series-xs' | 'switch' | 'android' | 'ios' | 'vr' | 'battlenet' | 'origin' | 'drm-free' | 'xbox-360';
+export type PlatformType = 'all' | 'pc' | 'steam' | 'epic-games-store' | 'ubisoft' | 'gog' | 'itchio' | 'ps4' | 'ps5'
+  | 'xbox-one' | 'xbox-series-xs' | 'switch' | 'android' | 'ios' | 'vr' | 'battlenet' | 'origin' | 'drm-free' | 'xbox-360';
 export type GameType = 'all' | 'game' | 'loot' | 'beta';
 
 @Injectable({
@@ -34,7 +34,14 @@ export class ApiService {
         'x-rapidapi-key': 'e675b0c6damsh1d075ad3910cd0bp19c1e9jsn8a402ca06cc0'
       }
     }).subscribe((giveAways: Giveaway[]) => {
-        this.giveaways$.next(giveAways);
+      this.giveaways$.next(giveAways);
+    });
+  }
+
+  public getGiveawayById(id: number): Giveaway | undefined {
+    const giveAways = this.giveaways$.value;
+    return giveAways.find((giveaway: Giveaway) => {
+      return giveaway.id === id
     });
   }
 }

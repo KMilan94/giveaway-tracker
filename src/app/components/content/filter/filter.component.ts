@@ -19,7 +19,7 @@ export class FilterComponent {
   public constructor(private apiService: ApiService) {}
 
   public platformsExpanded = false;
-  public selectedPlatform = 'all';
+  public selectedPlatform = this.apiService.selectedPlatform;
   public platforms: { [key: string]: FilterModel } = {
     'all': {
       name: 'All'
@@ -80,7 +80,7 @@ export class FilterComponent {
     }
   };
 
-  public selectedType = 'game';
+  public selectedType = this.apiService.selectedType;
   public types: { [key: string]: FilterModel } = {
     'all': {
       name: 'All'

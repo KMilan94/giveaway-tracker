@@ -3,9 +3,10 @@
     background-color: var(--foreground-dark);
     padding: 1rem;
     width: 220px;
+    border-radius: 5px;
 
     .category-title {
-        color: var(--white);
+        color: var(--primary);
         font-weight: 500;
         font-size: 1rem;
     }
@@ -14,6 +15,7 @@
         width: 100%;
         color: var(--primary);
         font-size: .9rem;
+        margin-bottom: 1rem;
     }
 
     .example-radio-group {
