@@ -1,0 +1,76 @@
+.details-container {
+    padding: 16px;
+    margin-bottom: 80px;
+
+    mat-card {
+        background-color: var(--foreground-dark);
+        cursor: pointer;
+    
+        img {
+            height: 12rem;
+            object-fit: cover;
+        }
+    
+        mat-card-content {
+            height: 5rem;
+    
+            .platform {
+                color: var(--grey);
+                font-size: .9rem;
+            }
+    
+            .description {
+                color: var(--primary);
+                font-size: 1rem;
+    
+                .free {
+                    color: var(--white);
+                    margin-right: 1rem;
+                }
+    
+                .worth {
+                    text-decoration: line-through;
+                    font-size: .9rem;
+                    color: var(--foreground-light);
+    
+                    &.na {
+                        text-decoration: unset;
+                    }
+                }
+            }
+        }
+    
+        mat-card-content > p {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2; /* number of lines to show */
+            line-clamp: 2; 
+            -webkit-box-orient: vertical;
+        }
+    
+        mat-card-title {
+            font-size: 1rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1; /* number of lines to show */
+            line-clamp: 1; 
+            -webkit-box-orient: vertical;
+        }
+    
+        mat-card-subtitle {
+            font-size: .9rem;
+            color: var(--primary);
+            font-weight: 500;
+        }
+    }
+    
+    mat-card:hover > img {
+        opacity: .7;
+    }
+    
+    ::ng-deep .mat-card-header-text {
+        margin: 0px;
+      }
+}

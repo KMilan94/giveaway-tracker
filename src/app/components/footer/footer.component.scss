@@ -1,0 +1,12 @@
+mat-toolbar {
+    background-color: var(--foreground-dark);
+    position: absolute;
+    bottom: 0;
+  
+    .source {
+        color: var(--primary);
+        font-size: 1rem;
+        font-weight: 500;
+        text-decoration: unset;
+    }
+  }

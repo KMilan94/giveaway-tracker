@@ -25,6 +25,7 @@ import { FilterComponent } from './components/content/filter/filter.component';
 import { ListComponent } from './components/content/list/list.component';
 import { SortComponent } from './components/content/sort/sort.component';
 import { DetailsComponent } from './components/details/details.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { DetailsComponent } from './components/details/details.component';
     FilterComponent,
     ListComponent,
     SortComponent,
-    DetailsComponent
+    DetailsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

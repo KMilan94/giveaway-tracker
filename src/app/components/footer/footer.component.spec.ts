@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SortComponent } from './sort.component';
+import { FooterComponent } from './footer.component';
 
-describe('SortComponent', () => {
-    let component: SortComponent;
-    let fixture: ComponentFixture<SortComponent>;
+describe('FooterComponent', () => {
+    let component: FooterComponent;
+    let fixture: ComponentFixture<FooterComponent>;
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [ SortComponent ]
+            declarations: [ FooterComponent ]
         }).compileComponents();
     });
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(SortComponent);
+        fixture = TestBed.createComponent(FooterComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });

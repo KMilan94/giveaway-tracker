@@ -9,8 +9,4 @@ import { Giveaway } from '../../../models/giveaway';
 export class ListComponent {
 
   @Input() public giveaways!: Giveaway[];
-
-  public viewDetail(giveaway: Giveaway): void {
-    console.log('viewing: ', giveaway);
-  }
 }
