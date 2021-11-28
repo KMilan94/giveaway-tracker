@@ -1,7 +1,7 @@
 @import '../../../../variables.scss';
 
 .grid-container {
-    padding: 16px;
+    padding: $defaultPadding;
     margin-bottom: $footerHeight;
 }
 
@@ -28,7 +28,8 @@ mat-card {
 
             .free {
                 color: var(--white);
-                margin-right: 1rem;
+                margin-right: .5rem;
+                font-weight: 500;
             }
 
             .worth {
@@ -53,7 +54,8 @@ mat-card {
     }
 
     mat-card-title {
-        font-size: 1rem;
+        font-size: 1.2rem;
+        line-height: 1.5rem;
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
@@ -63,7 +65,8 @@ mat-card {
     }
 
     mat-card-subtitle {
-        font-size: .9rem;
+        font-size: 1rem;
+        line-height: 1.2rem;
         color: var(--primary);
         font-weight: 500;
     }

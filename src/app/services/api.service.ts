@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 import { Giveaway } from '../models/giveaway';
@@ -34,11 +34,18 @@ export class ApiService {
         'x-rapidapi-key': 'e675b0c6damsh1d075ad3910cd0bp19c1e9jsn8a402ca06cc0'
       }
     }).subscribe((giveAways: Giveaway[]) => {
-      this.giveaways$.next(giveAways);
+        this.giveaways$.next(giveAways);
     });
   }
 
   public getGiveawayById(id: number): Observable<Giveaway> {
+
+    // check it is already loaded
+    const giveaway = this.giveaways$.value.find((giveaway: Giveaway) => giveaway.id === id);
+    if (giveaway) {
+        return of(giveaway);
+    }
+
     return this.http.get<Giveaway>(`https://gamerpower.p.rapidapi.com/api/giveaway?id=${id}`, {
       headers: {
         'x-rapidapi-host': 'gamerpower.p.rapidapi.com',

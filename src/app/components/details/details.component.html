@@ -1,26 +1,33 @@
 <div class="details-container">
-
     <mat-card *ngIf="giveaway">
-        <img mat-card-image src="{{ giveaway.thumbnail }}" alt="image failed to load">
-        <mat-card-title>{{ giveaway.title }}</mat-card-title>
-        <mat-card-subtitle>{{ giveaway.type }}</mat-card-subtitle>
+        <mat-card-header>
+            <img src="{{ giveaway.thumbnail }}" alt="image failed to load">
+            <div class="header-content">
+                <mat-card-title>{{ giveaway.title }}</mat-card-title>
+                <mat-card-subtitle>{{ giveaway.type }}</mat-card-subtitle>
+                <span class="spacer"></span>
+                <p class="platform">{{ giveaway.platforms }}</p>
+                <p class="description">
+                    <span class="free">FREE</span>
+                    <span class="worth" [class.na]="giveaway.worth === 'N/A'">{{ giveaway.worth }}</span>
+                </p>
+            </div>
+            <span class="spacer"></span>
+            <div class="obtain" fxLayout="column" fxLayoutAlign="space-evenly center">
+                <p class="obtain-info" fxLayout="column" fxLayoutAlign="center center">{{ giveaway.status }}</p>
+                <a mat-raised-button class="obtain-button" fxLayout="column" fxLayoutAlign="center center"
+                    href="{{ giveaway.open_giveaway_url }}" target="_blank">
+                    Get giveaway
+                </a>
+                <p class="obtain-info" fxLayout="column" fxLayoutAlign="center center">Ends in: {{ giveaway.end_date}}
+                </p>
+            </div>
+        </mat-card-header>
+        <mat-divider inset></mat-divider>
         <mat-card-content fxLayout="column" fxLayoutAlign="flex-end">
-            <p class="platform">
-                {{ giveaway.platforms }}
-            </p>
-            <p class="description">
-                <span class="free">
-                    FREE
-                </span>
-                <span class="worth" [class.na]="giveaway.worth === 'N/A'">
-                    {{ giveaway.worth }}
-                </span>
-            </p>
+            <p class="description">{{ giveaway.description }}</p>
+            <h4 class="how-to-get">How to get:</h4>
+            <p class="instructions" [innerHtml]="giveaway.instructions"></p>
         </mat-card-content>
     </mat-card>
-
-    <button mat-button routerLink="/">
-        back
-    </button>
 </div>
-

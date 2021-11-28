@@ -1,7 +1,7 @@
 <!-- Card: https://material.angular.io/components/card/overview -->
 <div class="grid-container">
     <div fxLayout="row wrap" fxLayoutGap="16px grid">
-        <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let giveaway of giveaways">
+        <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="50%" *ngFor="let giveaway of giveaways">
             <mat-card routerLink="/details/{{ giveaway.id }}">
                 <img mat-card-image src="{{ giveaway.image }}" alt="image failed to load">
                 <mat-card-title>{{ giveaway.title }}</mat-card-title>

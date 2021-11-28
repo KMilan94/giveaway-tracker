@@ -22,6 +22,7 @@ export class DetailsComponent implements OnInit, OnDestroy {
     public ngOnInit(): void {
         this.subscriptions = [
           this.apiService.getGiveawayById(this.id).subscribe((giveaway: Giveaway) => {
+              console.log('asd: ', giveaway);
               this.giveaway = giveaway;
           }, (err) => {
               console.error(err);
