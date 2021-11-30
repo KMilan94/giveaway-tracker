@@ -19,9 +19,7 @@ export class ApiService {
   public selectedType: GameType = 'all';
   public selectedSort: SortType = 'popularity';
 
-  public constructor(private http: HttpClient) {
-    this.fetchGiveaways();
-  }
+  public constructor(private http: HttpClient) { }
 
   public fetchGiveaways(): void {
     const sortParam = `sort-by=${this.selectedSort}`;
