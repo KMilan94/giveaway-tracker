@@ -1,0 +1,25 @@
+<ng-container *ngIf="giveaway">
+    <mat-card routerLink="/details/{{ giveaway.id }}">
+        <img mat-card-image src="{{ giveaway.image }}" (error)="onImageLoadingFailed($event)" alt="image failed to load">
+        <mat-card-title>{{ giveaway.title }}</mat-card-title>
+        <mat-card-subtitle>
+            <mat-chip-list aria-label="Fish selection">
+                <mat-chip class="{{giveaway.type}}">{{ giveaway.type }}</mat-chip>
+            </mat-chip-list>
+        </mat-card-subtitle>
+    
+        <mat-card-content fxLayout="column" fxLayoutAlign="flex-end">
+            <p class="platform">
+                {{ giveaway.platforms }}
+            </p>
+            <p class="description">
+                <span class="free">
+                    FREE
+                </span>
+                <span class="worth" [class.na]="giveaway.worth === 'N/A'">
+                    {{ giveaway.worth }}
+                </span>
+            </p>
+        </mat-card-content>
+    </mat-card>
+</ng-container>

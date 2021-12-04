@@ -17,7 +17,7 @@ export class ApiService {
 
   public selectedPlatform: PlatformType = 'all';
   public selectedType: GameType = 'all';
-  public selectedSort: SortType = 'popularity';
+  public selectedSort: SortType = 'date';
 
   public constructor(private http: HttpClient) { }
 
@@ -31,8 +31,9 @@ export class ApiService {
         'x-rapidapi-host': 'gamerpower.p.rapidapi.com',
         'x-rapidapi-key': 'e675b0c6damsh1d075ad3910cd0bp19c1e9jsn8a402ca06cc0'
       }
-    }).subscribe((giveAways: Giveaway[]) => {
-        this.giveaways$.next(giveAways);
+    }).subscribe((giveaways: Giveaway[]) => {
+        console.log('got: ', giveaways);
+        this.giveaways$.next(giveaways);
     });
   }
 

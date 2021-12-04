@@ -9,6 +9,8 @@ import { MatInputModule} from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [],
@@ -22,7 +24,9 @@ import { MatDividerModule } from '@angular/material/divider';
     MatButtonModule,
     MatIconModule,
     MatTooltipModule,
-    MatDividerModule
+    MatDividerModule,
+    MatChipsModule,
+    MatProgressBarModule
   ],
   exports: [
     MatFormFieldModule,
@@ -34,7 +38,9 @@ import { MatDividerModule } from '@angular/material/divider';
     MatButtonModule,
     MatIconModule,
     MatTooltipModule,
-    MatDividerModule
+    MatDividerModule,
+    MatChipsModule,
+    MatProgressBarModule
   ]
 })
 export class MaterialModule { }

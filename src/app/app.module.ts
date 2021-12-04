@@ -15,6 +15,9 @@ import { SortComponent } from './components/content/sort/sort.component';
 import { DetailsComponent } from './components/details/details.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MaterialModule } from './material.module';
+import { ListItemComponent } from './components/content/list-item/list-item.component';
+import { EmptyListItemComponent } from './components/content/empty-list-item/empty-list-item.component';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +28,9 @@ import { MaterialModule } from './material.module';
       ListComponent,
       SortComponent,
       DetailsComponent,
-      FooterComponent
+      FooterComponent,
+      ListItemComponent,
+      EmptyListItemComponent
   ],
   imports: [
       BrowserModule,

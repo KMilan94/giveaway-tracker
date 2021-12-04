@@ -98,16 +98,18 @@ export class FilterComponent {
 
   public ngOnChanges(changes: SimpleChanges): void {
     if (changes['giveaways'].currentValue) {
-      this.initPlatforms(changes);
-      this.initTypes(changes);
+      const isEmpty = changes['giveaways'].currentValue.status === 0;
+      const giveaways: Giveaway[] = changes['giveaways'].currentValue as Giveaway[] ;
+      this.initPlatforms(giveaways, isEmpty);
+      this.initTypes(giveaways, isEmpty);
     }
   }
 
-  private initTypes(changes: SimpleChanges): void {
+  private initTypes(giveaways: Giveaway[], isEmpty: boolean): void {
     Object.entries(this.types).forEach(
       ([key, value]) => {
-        const occurance = changes['giveaways'].currentValue.filter((giveaway: Giveaway) => {
-          return giveaway.type.toLowerCase().includes(value.name.toLowerCase())
+        const occurance = isEmpty ? 0 : giveaways.filter((giveaway: Giveaway) => {
+          return giveaway.type.toLowerCase().includes(value.name.toLowerCase());
         }).length || 0;
         this.types[key] = {
           ...this.types[key],
@@ -118,14 +120,14 @@ export class FilterComponent {
 
     this.types['all'] = {
       ...this.types['all'],
-      count: changes['giveaways'].currentValue.length || 0
+      count: giveaways.length || 0
     };
   }
 
-  private initPlatforms(changes: SimpleChanges): void {
+  private initPlatforms(giveaways: Giveaway[], isEmpty: boolean): void {
     Object.entries(this.platforms).forEach(
       ([key, value]) => {
-        const occurance = changes['giveaways'].currentValue.filter((giveaway: Giveaway) => {
+        const occurance = isEmpty ? 0 : giveaways.filter((giveaway: Giveaway) => {
           return giveaway.platforms.toLowerCase().includes(value.name.toLowerCase())
         }).length || 0;
         this.platforms[key] = {
@@ -137,7 +139,7 @@ export class FilterComponent {
 
     this.platforms['all'] = {
       ...this.platforms['all'],
-      count: changes['giveaways'].currentValue.length || 0
+      count: giveaways.length || 0
     }
   }
 

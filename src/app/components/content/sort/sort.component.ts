@@ -19,7 +19,7 @@ export class SortComponent {
   public selectedSort = this.apiService.selectedSort;
   public sortOptions: {[key: string]: SortModel} = {
     'date': {
-      name: 'Release Date',
+      name: 'Relevance',
       icon: 'date_range'
     },
     'value': { 
