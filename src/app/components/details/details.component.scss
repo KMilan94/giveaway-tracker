@@ -47,7 +47,7 @@
                 .description {
                     color: var(--primary);
                     font-size: 1rem;
-                    margin-bottom: 1rem !important;
+                    margin-bottom: 0;
         
                     .free {
                         color: var(--white);
@@ -67,32 +67,16 @@
                 }
             }
 
-            .obtain {
-                border-radius: 5px;
-                background-color: var(--background);
+            .obtain-button {
                 color: var(--white);
-                padding: $defaultPadding;
-
-                .obtain-button {
-                    color: var(--white);
-                    background-color: var(--foreground-light);
-                    height: 3rem;
-                    width: 16rem;
-                    border-radius: 5px;
-                    margin-top: .5rem;
-                    margin-bottom: .5rem;
-                    font-size: 1.2rem;
-                    border: 1px solid var(--white);
-                }
-
-                .obtain-info {
-                    color: var(--grey);
-                    border: 1px solid var(--white);
-                    border-radius: 5px;
-                    height: 2rem;
-                    width: 16rem;
-                    margin: 0;
-                }
+                background-color: var(--foreground-light);
+                height: 3rem;
+                width: 16rem;
+                border-radius: 5px;
+                margin-top: .5rem;
+                margin-bottom: .5rem;
+                font-size: 1.2rem;
+                border: 1px solid var(--white);
             }
         }
     

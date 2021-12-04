@@ -13,15 +13,10 @@
                 </p>
             </div>
             <span class="spacer"></span>
-            <div class="obtain" fxLayout="column" fxLayoutAlign="space-evenly center">
-                <p class="obtain-info" fxLayout="column" fxLayoutAlign="center center">{{ giveaway.status }}</p>
-                <a mat-raised-button class="obtain-button" fxLayout="column" fxLayoutAlign="center center"
-                    href="{{ giveaway.open_giveaway_url }}" target="_blank">
-                    Get giveaway
-                </a>
-                <p class="obtain-info" fxLayout="column" fxLayoutAlign="center center">Ends in: {{ giveaway.end_date}}
-                </p>
-            </div>
+            <a mat-raised-button class="obtain-button" fxLayout="column" fxLayoutAlign="center center"
+                href="{{ giveaway.open_giveaway_url }}" target="_blank">
+                Get giveaway
+            </a>
         </mat-card-header>
         <mat-divider inset></mat-divider>
         <mat-card-content fxLayout="column" fxLayoutAlign="flex-end">
