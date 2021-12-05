@@ -18,6 +18,7 @@ import { DetailsComponent } from './components/details/details.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ListItemComponent } from './components/content/list-item/list-item.component';
 import { EmptyListItemComponent } from './components/content/empty-list-item/empty-list-item.component';
+import { HotGiveawaysComponent } from './components/content/hot-giveaways/hot-giveaways.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { EmptyListItemComponent } from './components/content/empty-list-item/emp
       DetailsComponent,
       FooterComponent,
       ListItemComponent,
-      EmptyListItemComponent
+      EmptyListItemComponent,
+      HotGiveawaysComponent
   ],
   imports: [
       BrowserModule,

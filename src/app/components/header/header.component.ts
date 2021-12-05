@@ -11,6 +11,8 @@ import { Worth } from '../../models/worth';
 })
 export class HeaderComponent implements OnInit, OnDestroy {
 
+  public languages: string[] = [ 'english', 'hungarian' ];
+  public currentLanguage = 'english';
   private subscriptions: Subscription[] = [];
 
   public worth!: Worth;

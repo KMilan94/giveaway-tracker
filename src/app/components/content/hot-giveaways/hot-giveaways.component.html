@@ -1,0 +1,19 @@
+<div class="hot-giveaways" [ngStyle]="getGridStyle()">
+    <div class="banner" (click)="resetStyle()">
+        
+        <div class="banner-text">
+            {{ generateBannerText() }}
+            
+            <div class="choose-text" *ngIf="!someGiveawaySelected()">
+                Choose your personal favorite
+            </div>
+        </div>
+    </div>
+    <div class="giveaway" *ngFor="let giveaway of hotGiveaways" (click)="expandGiveaway(giveaway)"
+        [ngStyle]="{ 'background-image': 'url(' + giveaway.url + ')' }" fxShow fxHide.sm fxHide.xs>
+
+        <button mat-raised-button class="detail-button" routerLink="/details/{{ giveaway.id }}" *ngIf="giveaway.selected">
+            Check details
+        </button>
+    </div>
+</div>

@@ -1,9 +1,7 @@
 mat-toolbar {
   background-color: var(--foreground-dark);
-
-  .spacer {
-    flex: 1 1 auto;
-  }
+  justify-content: space-between;
+  width: 100%;
 
   .title {
     color: var(--foreground-light);
@@ -14,12 +12,21 @@ mat-toolbar {
     mat-icon {
       font-size: 1.3rem;
       font-weight: normal;
+      margin-right: .5rem;
     }
   }
 
   .status-message {
     color: var(--grey);
     font-size: .9rem;
-    font-weight: 500;
+    margin-right: 2rem;
+  }
+
+  .language-selector {
+    width: 100px;
+    margin-right: 1rem;
+    color: var(--foreground-light);
+    font-size: 1rem;
+    text-transform: capitalize;
   }
 }

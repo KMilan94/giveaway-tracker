@@ -1,8 +1,11 @@
 <mat-toolbar>
     <button class="title" (click)="goBack()" mat-button>
-        <mat-icon>track_changes</mat-icon>
-        Giveaway Tracker
+        <mat-icon>track_changes</mat-icon>Giveaway Tracker
     </button>
-    <span class="spacer"></span>
     <span class="status-message" fxHide.xs fxHide.sm>{{ generateStatusMessage() }}</span>
+    <mat-select class="language-selector" [value]="currentLanguage" disabled>
+        <mat-option *ngFor="let lang of languages" [value]="lang">
+            {{ lang }}
+        </mat-option>
+    </mat-select>
 </mat-toolbar>
