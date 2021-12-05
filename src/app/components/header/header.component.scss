@@ -6,14 +6,20 @@ mat-toolbar {
   }
 
   .title {
-    color: var(--white);
+    color: var(--foreground-light);
     font-weight: 500;
     font-size: 1.5rem;
     letter-spacing: 1px;
 
     mat-icon {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       font-weight: normal;
     }
+  }
+
+  .status-message {
+    color: var(--grey);
+    font-size: .9rem;
+    font-weight: 500;
   }
 }

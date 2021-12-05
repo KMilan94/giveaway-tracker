@@ -3,6 +3,7 @@ import { BehaviorSubject, Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 import { Giveaway } from '../models/giveaway';
+import { Worth } from '../models/worth';
 
 export type SortType = 'date' | 'value' | 'popularity';
 export type PlatformType = 'all' | 'pc' | 'steam' | 'epic-games-store' | 'ubisoft' | 'gog' | 'itchio' | 'ps4' | 'ps5'
@@ -32,7 +33,6 @@ export class ApiService {
         'x-rapidapi-key': 'e675b0c6damsh1d075ad3910cd0bp19c1e9jsn8a402ca06cc0'
       }
     }).subscribe((giveaways: Giveaway[]) => {
-        console.log('got: ', giveaways);
         this.giveaways$.next(giveaways);
     });
   }
@@ -46,6 +46,19 @@ export class ApiService {
     }
 
     return this.http.get<Giveaway>(`https://gamerpower.p.rapidapi.com/api/giveaway?id=${id}`, {
+      headers: {
+        'x-rapidapi-host': 'gamerpower.p.rapidapi.com',
+        'x-rapidapi-key': 'e675b0c6damsh1d075ad3910cd0bp19c1e9jsn8a402ca06cc0'
+      }
+    });
+  }
+
+  public fetchWorth(): Observable<Worth> {
+
+    const platformParam = this.selectedPlatform === 'all' ? '' : `platform=${this.selectedPlatform}`;
+    const typeParam = this.selectedType === 'all' ? '' : `type=${this.selectedType}`;
+
+    return this.http.get<Worth>(`https://gamerpower.p.rapidapi.com/api/worth?${platformParam}&${typeParam}`, {
       headers: {
         'x-rapidapi-host': 'gamerpower.p.rapidapi.com',
         'x-rapidapi-key': 'e675b0c6damsh1d075ad3910cd0bp19c1e9jsn8a402ca06cc0'

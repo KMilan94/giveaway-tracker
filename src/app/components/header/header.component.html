@@ -4,7 +4,5 @@
         Giveaway Tracker
     </button>
     <span class="spacer"></span>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-        <mat-icon>share</mat-icon>
-    </button>
+    <span class="status-message" fxHide.xs fxHide.sm>{{ generateStatusMessage() }}</span>
 </mat-toolbar>

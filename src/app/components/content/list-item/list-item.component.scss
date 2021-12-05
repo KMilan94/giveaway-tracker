@@ -11,7 +11,7 @@ mat-card {
         height: 5rem;
 
         .platform {
-            color: var(--primary);
+            color: var(--white);
             font-weight: 500;
             font-size: .9rem;
         }
@@ -21,7 +21,7 @@ mat-card {
             font-size: 1rem;
 
             .free {
-                color: var(--white);
+                color: var(--foreground-light);
                 margin-right: .5rem;
                 font-weight: 500;
             }
@@ -29,7 +29,7 @@ mat-card {
             .worth {
                 text-decoration: line-through;
                 font-size: .9rem;
-                color: var(--grey);
+                color: var(--primary);
 
                 &.na {
                     text-decoration: unset;

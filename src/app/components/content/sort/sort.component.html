@@ -3,7 +3,7 @@
         Results found: {{ giveaways?.length || 0 }}
     </div>
 
-    <div class="sort-area">
+    <div class="sort-area" matTooltip="Sort by descending order">
         <button mat-button [matMenuTriggerFor]="menu">
             <mat-icon aria-hidden="false">sort</mat-icon>
             Sort by: {{ sortOptions[selectedSort].name }}
