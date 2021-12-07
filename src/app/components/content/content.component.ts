@@ -22,7 +22,9 @@ export class ContentComponent implements OnInit, OnDestroy {
       })
     ]
 
-    this.apiService.fetchGiveaways();
+    if(this.giveAways) {
+      this.apiService.fetchGiveaways();
+    }
   }
 
   public ngOnDestroy(): void {

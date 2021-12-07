@@ -43,7 +43,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
       return 'Loading..';
     }
 
-    return `We found ${this.worth.worth_estimation_usd}$ worth of loot, ${this.worth.active_giveaways_number} active giveaways with the current conditions.`;
+    return `We found ${this.worth.worth_estimation_usd}$ worth of loot, ${this.worth.active_giveaways_number} active giveaways with the current conditions`;
   }
 
   public goBack(): void {

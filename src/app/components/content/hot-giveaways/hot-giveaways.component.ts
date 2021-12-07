@@ -1,3 +1,4 @@
+import { BreakpointObserver } from '@angular/cdk/layout';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { skip, Subscription, take } from 'rxjs';
 import { Giveaway } from 'src/app/models/giveaway';
@@ -10,6 +11,8 @@ export interface HotGiveaway {
   selected: boolean;
 }
 
+export const SM_BREAKPOINT = 959; // breakpoint indicating the supremum of sm
+
 @Component({
   selector: 'app-hot-giveaways',
   templateUrl: './hot-giveaways.component.html',
@@ -17,10 +20,10 @@ export interface HotGiveaway {
 })
 export class HotGiveawaysComponent implements OnInit, OnDestroy {
 
-  private subscriptions: Subscription[] = [];
   public hotGiveaways!: HotGiveaway[];
+  private subscriptions: Subscription[] = [];
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService, private breakpointObserver: BreakpointObserver) { }
 
   public ngOnInit(): void {
     this.subscriptions = [
@@ -28,7 +31,7 @@ export class HotGiveawaysComponent implements OnInit, OnDestroy {
         skip(1), // skip initial value
         take(1)) // subscribe only to the relevance related fetch
         .subscribe((giveaways: Giveaway[]) => {
-          this.hotGiveaways = this.formatGiveaways(giveaways);
+          this.hotGiveaways = this.formatGiveaways([...giveaways]);
           console.log('Result: ', this.hotGiveaways);
         })
     ]
@@ -81,6 +84,9 @@ export class HotGiveawaysComponent implements OnInit, OnDestroy {
   }
 
   public someGiveawaySelected(): boolean {
+    if (!this.hotGiveaways) {
+      return true;
+    }
     return this.hotGiveaways.some((giveaway: HotGiveaway) => giveaway.selected);
   }
 
