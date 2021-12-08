@@ -5,6 +5,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { SwiperModule } from 'swiper/angular';
+
 import { MaterialModule } from './material.module';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -41,7 +43,8 @@ import { HotGiveawaysComponent } from './components/content/hot-giveaways/hot-gi
       HttpClientModule,
       FormsModule,
       FlexLayoutModule,
-      MaterialModule
+      MaterialModule,
+      SwiperModule
   ],
   providers: [],
   bootstrap: [ 

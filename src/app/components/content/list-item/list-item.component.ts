@@ -16,4 +16,19 @@ export class ListItemComponent {
   public onImageLoadingFailed($event: any): void {
     $event.target.src = DEFAULT_IMAGE_PATH;
   }
+
+  public getColor(giveType: string): Record<string, string> {
+    let style;
+
+    switch (giveType) {
+      case 'DLC & Loot': style = '#a335ee'; break;
+      case 'Full Game': style = '#ff8000'; break;
+      case 'Early Access':
+      default: style = '#0070dd'; break;
+    }
+
+    return {
+      'background-color': style
+    }
+  }
 }

@@ -4,6 +4,12 @@ import { skip, Subscription, take } from 'rxjs';
 import { Giveaway } from 'src/app/models/giveaway';
 import { ApiService } from 'src/app/services/api.service';
 
+// import Swiper core and required modules
+import SwiperCore, { Autoplay, Pagination, Navigation } from "swiper";
+
+// install Swiper modules
+SwiperCore.use([Autoplay, Pagination, Navigation]);
+
 export interface HotGiveaway {
   id: number;
   name: string;
@@ -58,43 +64,18 @@ export class HotGiveawaysComponent implements OnInit, OnDestroy {
       current.selected = current.id === giveaway.id ? !giveaway.selected : false;
     });
   }
-
-  public getGridStyle(): Record<string, string> {
-    let templateColumns = '';
-
-    // process banner
-    templateColumns += this.hotGiveaways.some((giveaway: HotGiveaway) => giveaway.selected) ? '2fr ' : '4fr ';
-
-    // process giveaways
-    this.hotGiveaways.forEach((giveaway: HotGiveaway) => {
-      templateColumns += giveaway.selected ? '2fr ' : '1fr ';
-    });
-
-    console.log('Result: ', templateColumns);
-
-    return {
-      'grid-template-columns': templateColumns
-    };
-  }
-
-  public resetStyle(): void {
-    this.hotGiveaways.forEach((giveaway: HotGiveaway) => {
-      giveaway.selected = false;
-    })
-  }
-
-  public someGiveawaySelected(): boolean {
-    if (!this.hotGiveaways) {
-      return true;
-    }
-    return this.hotGiveaways.some((giveaway: HotGiveaway) => giveaway.selected);
-  }
-
   public generateBannerText(): string {
     const d = new Date();
     const monthNames = ["January", "February", "March", "April", "May", "June",
       "July", "August", "September", "October", "November", "December"
     ];
     return `Latest deals of ${monthNames[d.getMonth()]}`
+  }
+
+  onSwiper(swiper: any) {
+    console.log(swiper);
+  }
+  onSlideChange() {
+    console.log('slide change');
   }
 }

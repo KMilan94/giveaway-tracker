@@ -1,19 +1,72 @@
-<div class="hot-giveaways" [ngStyle]="getGridStyle()">
-    <div class="banner" (click)="resetStyle()">
-        
-        <div class="banner-text">
-            {{ generateBannerText() }}
-            
-            <div class="choose-text" *ngIf="!someGiveawaySelected()">
-                Choose your personal favorite
-            </div>
-        </div>
-    </div>
-    <div class="giveaway" *ngFor="let giveaway of hotGiveaways" (click)="expandGiveaway(giveaway)"
-        [ngStyle]="{ 'background-image': 'url(' + giveaway.url + ')' }" fxShow fxHide.sm fxHide.xs>
+<div class="hot-giveaways">
+  <swiper
+  style="--swiper-navigation-color: #fff;--swiper-pagination-color: #fff"
+  [zoom]="true"
+  [navigation]="true"
+  [centeredSlides]="true"
+  [pagination]="{
+    clickable: true
+  }"
+  class="mySwiper"
+>
+    <ng-template swiperSlide *ngFor="let giveaway of hotGiveaways">
+      <div class="title" data-swiper-parallax="-300">{{ giveaway.name }}</div>
+      <div class="swiper-zoom-container">
 
-        <button mat-raised-button class="detail-button" routerLink="/details/{{ giveaway.id }}" *ngIf="giveaway.selected">
-            Check details
-        </button>
-    </div>
+        <!-- Required swiper-lazy class and image source specified in data-src attribute -->
+        <img data-src="{{ giveaway.url }}"/>
+      </div> 
+
+    </ng-template>
+  </swiper>
+
+  <!--
+    <swiper
+    style="--swiper-navigation-color: #fff;--swiper-pagination-color: #fff"
+    [zoom]="true"
+    [navigation]="true"
+    [pagination]="{
+      clickable: true
+    }"
+    class="mySwiper"
+  >
+    <ng-template swiperSlide>
+      <div class="swiper-zoom-container">
+        <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+      </div> </ng-template
+    ><ng-template swiperSlide>
+      <div class="swiper-zoom-container">
+        <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+      </div> </ng-template
+    ><ng-template swiperSlide>
+      <div class="swiper-zoom-container">
+        <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+      </div> </ng-template
+    ><ng-template swiperSlide>
+      <div class="swiper-zoom-container">
+        <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+      </div> </ng-template
+    ><ng-template swiperSlide>
+      <div class="swiper-zoom-container">
+        <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+      </div> </ng-template
+    ><ng-template swiperSlide>
+      <div class="swiper-zoom-container">
+        <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+      </div> </ng-template
+    ><ng-template swiperSlide>
+      <div class="swiper-zoom-container">
+        <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+      </div> </ng-template
+    ><ng-template swiperSlide>
+      <div class="swiper-zoom-container">
+        <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+      </div> </ng-template
+    ><ng-template swiperSlide>
+      <div class="swiper-zoom-container">
+        <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+      </div>
+    </ng-template>
+  </swiper>
+  -->
 </div>
