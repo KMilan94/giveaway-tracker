@@ -4,13 +4,17 @@ import { skip, Subscription, take } from 'rxjs';
 import { Giveaway } from 'src/app/models/giveaway';
 import { ApiService } from 'src/app/services/api.service';
 
-import { SwiperComponent } from "swiper/angular";
-
 // import Swiper core and required modules
-import SwiperCore, { EffectCoverflow, Pagination } from "swiper";
+import SwiperCore, {
+  Keyboard,
+  Scrollbar,
+  Navigation,
+  Pagination,
+  Autoplay
+} from "swiper";
 
 // install Swiper modules
-SwiperCore.use([EffectCoverflow, Pagination]);
+SwiperCore.use([Autoplay, Keyboard, Scrollbar, Navigation, Pagination]);
 
 export interface HotGiveaway {
   id: number;

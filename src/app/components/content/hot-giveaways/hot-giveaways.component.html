@@ -1,13 +1,18 @@
-<swiper [effect]="'coverflow'"
-  [grabCursor]="true" [centeredSlides]="true" [slidesPerView]="'auto'" [coverflowEffect]="{
-  rotate: 50,
-  stretch: 0,
-  depth: 100,
-  modifier: 1,
-  slideShadows: true
-}" [pagination]="true">
+<swiper [slidesPerView]="1" [centeredSlides]="false" [slidesPerGroupSkip]="1" [grabCursor]="true" [keyboard]="{
+      enabled: true
+    }" [breakpoints]="{
+      '769': {
+        slidesPerView: 2,
+        slidesPerGroup: 2
+      }
+    }" style="--swiper-navigation-color: #fff;--swiper-pagination-color: #fff" [autoplay]="{
+      delay: 2500,
+      disableOnInteraction: false
+    }" [scrollbar]="true" [navigation]="true" [pagination]="{
+      clickable: true
+    }" class="mySwiper">
   <ng-template swiperSlide *ngFor="let giveaway of hotGiveaways">
     <div class="title" data-swiper-parallax="-300">{{ giveaway.name }}</div>
-    <img src="{{ giveaway.url }}" />
+    <img src="{{ giveaway.url}}" />
   </ng-template>
 </swiper>
