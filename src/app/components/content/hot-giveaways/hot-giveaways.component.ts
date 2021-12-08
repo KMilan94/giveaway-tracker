@@ -1,14 +1,16 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { skip, Subscription, take } from 'rxjs';
 import { Giveaway } from 'src/app/models/giveaway';
 import { ApiService } from 'src/app/services/api.service';
 
+import { SwiperComponent } from "swiper/angular";
+
 // import Swiper core and required modules
-import SwiperCore, { Autoplay, Pagination, Navigation } from "swiper";
+import SwiperCore, { EffectCoverflow, Pagination } from "swiper";
 
 // install Swiper modules
-SwiperCore.use([Autoplay, Pagination, Navigation]);
+SwiperCore.use([EffectCoverflow, Pagination]);
 
 export interface HotGiveaway {
   id: number;
@@ -22,7 +24,8 @@ export const SM_BREAKPOINT = 959; // breakpoint indicating the supremum of sm
 @Component({
   selector: 'app-hot-giveaways',
   templateUrl: './hot-giveaways.component.html',
-  styleUrls: ['./hot-giveaways.component.scss']
+  styleUrls: ['./hot-giveaways.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class HotGiveawaysComponent implements OnInit, OnDestroy {
 
@@ -48,7 +51,7 @@ export class HotGiveawaysComponent implements OnInit, OnDestroy {
   }
 
   public formatGiveaways(giveaway: Giveaway[]): HotGiveaway[] {
-    const hotGiveaways: Giveaway[] = giveaway.splice(0, 3);
+    const hotGiveaways: Giveaway[] = giveaway.splice(0, 8);
     return hotGiveaways.map((giveaway: Giveaway) => {
       return {
         id: giveaway.id,
@@ -70,12 +73,5 @@ export class HotGiveawaysComponent implements OnInit, OnDestroy {
       "July", "August", "September", "October", "November", "December"
     ];
     return `Latest deals of ${monthNames[d.getMonth()]}`
-  }
-
-  onSwiper(swiper: any) {
-    console.log(swiper);
-  }
-  onSlideChange() {
-    console.log('slide change');
   }
 }
