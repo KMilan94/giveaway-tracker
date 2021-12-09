@@ -127,9 +127,9 @@ export class HotGiveawaysComponent implements OnInit, OnDestroy {
       this.swiperWidth = 1260;
     }
     if(this.isLarge || this.isXLarge) {
-      this.slidesPerGroup = 4;
-      this.slidesPerView = 4;
-      this.swiperWidth = 1500;
+      this.slidesPerGroup = 2;
+      this.slidesPerView = 2;
+      this.swiperWidth = 800;
     }
   }
 }
