@@ -24,8 +24,6 @@ export interface HotGiveaway {
   selected: boolean;
 }
 
-export const SM_BREAKPOINT = 959; // breakpoint indicating the supremum of sm
-
 @Component({
   selector: 'app-hot-giveaways',
   templateUrl: './hot-giveaways.component.html',
@@ -110,15 +108,18 @@ export class HotGiveawaysComponent implements OnInit, OnDestroy {
 
   public setSwiperConfig(): void {
     console.log('Breakpoints: ',  this.viewportSizes);
+
+    const filterWidth = 252; // px
+
     if(this.isXSmall) {
       this.slidesPerGroup = 1;
       this.slidesPerView = 1;
-      this.swiperWidth = 580;
+      this.swiperWidth = 456;
     }
     if(this.isSmall) {
-      this.slidesPerView = 2;
-      this.slidesPerGroup = 2;
-      this.swiperWidth = 940;
+      this.slidesPerView = 1;
+      this.slidesPerGroup = 1;
+      this.swiperWidth = 560;
     }
     if(this.isMedium) {
       this.slidesPerGroup = 3;
@@ -128,7 +129,7 @@ export class HotGiveawaysComponent implements OnInit, OnDestroy {
     if(this.isLarge || this.isXLarge) {
       this.slidesPerGroup = 4;
       this.slidesPerView = 4;
-      this.swiperWidth = 1900;
+      this.swiperWidth = 1500;
     }
   }
 }
