@@ -25,7 +25,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
         switchMap(() => {
           return this.apiService.fetchWorth()
         }), distinctUntilChanged()).subscribe((worth: Worth) => {
-          console.log('Worth: ', worth);
           this.worth = {
             active_giveaways_number: worth.active_giveaways_number ? worth.active_giveaways_number : 0,
             worth_estimation_usd: worth.worth_estimation_usd ? worth.worth_estimation_usd : '0'

@@ -1,6 +1,7 @@
-import { BreakpointObserver } from '@angular/cdk/layout';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { skip, Subscription, take } from 'rxjs';
+
 import { Giveaway } from 'src/app/models/giveaway';
 import { ApiService } from 'src/app/services/api.service';
 
@@ -33,7 +34,34 @@ export const SM_BREAKPOINT = 959; // breakpoint indicating the supremum of sm
 })
 export class HotGiveawaysComponent implements OnInit, OnDestroy {
 
+  /**
+ * Breakpoints and Orientation provided 
+ * via the 'layout' cdk.
+ */
+  public viewportSizes = [
+    Breakpoints.XSmall,
+    Breakpoints.Small,
+    Breakpoints.Medium,
+    Breakpoints.Large,
+    Breakpoints.XLarge
+  ];
+
+    /**
+   * Our local boolean variables to
+   * declare is we are within certain
+   * breakpoints.
+   */
+     public isXSmall!: boolean;
+     public isSmall!: boolean;
+     public isMedium!: boolean;
+     public isLarge!: boolean;
+     public isXLarge!: boolean;
+    
+
   public hotGiveaways!: HotGiveaway[];
+  public slidesPerGroup = 2;
+  public slidesPerView = 2;
+  public swiperWidth = 600; // in px
   private subscriptions: Subscription[] = [];
 
   constructor(private apiService: ApiService, private breakpointObserver: BreakpointObserver) { }
@@ -45,7 +73,21 @@ export class HotGiveawaysComponent implements OnInit, OnDestroy {
         take(1)) // subscribe only to the relevance related fetch
         .subscribe((giveaways: Giveaway[]) => {
           this.hotGiveaways = this.formatGiveaways([...giveaways]);
-          console.log('Result: ', this.hotGiveaways);
+        }),
+        this.breakpointObserver.observe([
+          Breakpoints.XSmall,
+          Breakpoints.Small,
+          Breakpoints.Medium,
+          Breakpoints.Large,
+          Breakpoints.XLarge,
+        ]).subscribe(() => {
+          this.isXSmall = this.breakpointObserver.isMatched(Breakpoints.XSmall);
+          this.isSmall = this.breakpointObserver.isMatched(Breakpoints.Small);
+          this.isMedium = this.breakpointObserver.isMatched(Breakpoints.Medium);
+          this.isLarge = this.breakpointObserver.isMatched(Breakpoints.Large);
+          this.isXLarge = this.breakpointObserver.isMatched(Breakpoints.XLarge);
+          this.setSwiperConfig();
+          // console.log('small: ', this.isXSmall, this.isSmall, this.isMedium, this.isLarge, this.isLarge, this.isXLarge, state);
         })
     ]
   }
@@ -66,16 +108,27 @@ export class HotGiveawaysComponent implements OnInit, OnDestroy {
     });
   }
 
-  public expandGiveaway(giveaway: HotGiveaway): void {
-    this.hotGiveaways.forEach((current: HotGiveaway) => {
-      current.selected = current.id === giveaway.id ? !giveaway.selected : false;
-    });
-  }
-  public generateBannerText(): string {
-    const d = new Date();
-    const monthNames = ["January", "February", "March", "April", "May", "June",
-      "July", "August", "September", "October", "November", "December"
-    ];
-    return `Latest deals of ${monthNames[d.getMonth()]}`
+  public setSwiperConfig(): void {
+    console.log('Breakpoints: ',  this.viewportSizes);
+    if(this.isXSmall) {
+      this.slidesPerGroup = 1;
+      this.slidesPerView = 1;
+      this.swiperWidth = 580;
+    }
+    if(this.isSmall) {
+      this.slidesPerView = 2;
+      this.slidesPerGroup = 2;
+      this.swiperWidth = 940;
+    }
+    if(this.isMedium) {
+      this.slidesPerGroup = 3;
+      this.slidesPerView = 3;
+      this.swiperWidth = 1260;
+    }
+    if(this.isLarge || this.isXLarge) {
+      this.slidesPerGroup = 4;
+      this.slidesPerView = 4;
+      this.swiperWidth = 1900;
+    }
   }
 }

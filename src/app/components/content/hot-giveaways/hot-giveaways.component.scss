@@ -1,5 +1,4 @@
 .swiper {
-  width: 800px;
   height: 300px;
   background-color: var(--foreground-dark);
   border-radius: 5px;
@@ -9,7 +8,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: start;
+  justify-content: flex-start;
   position: relative;
   padding-top: 1rem;
 
