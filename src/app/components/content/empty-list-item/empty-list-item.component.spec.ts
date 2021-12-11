@@ -4,32 +4,47 @@ import { MaterialModule } from 'src/app/material.module';
 import { ApiService } from 'src/app/services/api.service';
 import { EmptyListItemComponent } from './empty-list-item.component';
 
+class MockApiService {
+  public selectedType = 'loot';
+  public selectedPlatform = 'ubisoft';
+}
+
 describe('EmptyListItemComponent', () => {
-    let component: EmptyListItemComponent;
-    let fixture: ComponentFixture<EmptyListItemComponent>;
+  let component: EmptyListItemComponent;
+  let fixture: ComponentFixture<EmptyListItemComponent>;
 
-    beforeEach(async () => {
-      await TestBed.configureTestingModule({
-        declarations: [ 
-            EmptyListItemComponent 
-        ],
-        providers: [ 
-           ApiService
-        ],
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [
+        EmptyListItemComponent
+      ],
+      providers: [
+        { provide: ApiService, useClass: MockApiService }
+      ],
       imports: [
-          HttpClientTestingModule,
-          MaterialModule
-        ]
-      }).compileComponents();
-    });
+        HttpClientTestingModule,
+        MaterialModule
+      ]
+    }).compileComponents();
+  });
 
-    beforeEach(() => {
-        fixture = TestBed.createComponent(EmptyListItemComponent);
-        component = fixture.componentInstance;
-        fixture.detectChanges();
-    });
+  beforeEach(() => {
+    fixture = TestBed.createComponent(EmptyListItemComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
 
-    it('should create', () => {
-        expect(component).toBeTruthy();
-    });
+  afterEach(() => {
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
+  it('should construct message from api service', () => {
+    const message = fixture.nativeElement.querySelector('mat-card-subtitle');
+    expect(message.innerHTML).toEqual(`No active giveaway available with these conditions: type=loot, 
+      platform=ubisoft. Try with different filters.`);
+  })
 });

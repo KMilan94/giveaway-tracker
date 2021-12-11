@@ -2,7 +2,9 @@ import { Component, Input } from '@angular/core';
 import { Giveaway } from 'src/app/models/giveaway';
 import { ApiService, SortType } from 'src/app/services/api.service';
 
-type SortModel = {
+import { sortOptions } from 'src/app/data/sort-options';
+
+export type SortModel = {
   name: string;
   icon: string;
 }
@@ -17,20 +19,7 @@ export class SortComponent {
   @Input() public giveaways!: Giveaway[];
 
   public selectedSort = this.apiService.selectedSort;
-  public sortOptions: {[key: string]: SortModel} = {
-    'date': {
-      name: 'Relevance',
-      icon: 'date_range'
-    },
-    'value': { 
-      name: 'Value',
-      icon: 'attach_money'
-    }, 
-    'popularity': {
-      name: 'Popularity',
-      icon: 'timeline' 
-    }
-  }
+  public sortOptions: {[key: string]: SortModel} = {...sortOptions};
 
   public constructor(private apiService: ApiService) { }
 

@@ -2,7 +2,10 @@ import { Component, Input, SimpleChanges } from '@angular/core';
 import { ApiService, PlatformType, GameType } from 'src/app/services/api.service';
 import { Giveaway } from '../../../models/giveaway';
 
-type FilterModel = {
+import { platforms } from 'src/app/data/platforms';
+import { giveawayTypes } from 'src/app/data/game-types';
+
+export type FilterModel = {
   name: string;
   count?: number;
 }
@@ -18,83 +21,11 @@ export class FilterComponent {
 
   public constructor(private apiService: ApiService) {}
 
-  public platformsExpanded = false;
-  public selectedPlatform = this.apiService.selectedPlatform;
-  public platforms: { [key: string]: FilterModel } = {
-    'all': {
-      name: 'All'
-    },
-    'pc': {
-      name: 'PC'
-    },
-    'steam': {
-      name: 'Steam'
-    },
-    'epic-games-store': {
-      name: 'Epic Games Store'
-    },
-    'ubisoft': {
-      name: 'Ubisoft'
-    },
-    'gog': {
-      name: 'GOG'
-    },
-    'itchio': {
-      name: 'Itch.io'
-    },
-    'ps4': {
-      name: 'Playstation 4'
-    },
-    'ps5': {
-      name: 'Playstation 5'
-    },
-    'xbox-one': {
-      name: 'Xbox One'
-    },
-    'xbox-series-xs': {
-      name: 'Xbox Series X|S'
-    },
-    'switch': {
-      name: 'Nintendo Switch'
-    },
-    'android': {
-      name: 'Android'
-    },
-    'ios': {
-      name: 'iOS'
-    },
-    'vr': {
-      name: 'VR'
-    },
-    'battlenet': {
-      name: 'Battlenet'
-    },
-    'origin': {
-      name: 'Origin'
-    },
-    'drm-free': {
-      name: 'DRM-Free'
-    },
-    'xbox-360': {
-      name: 'Xbox 360'
-    }
-  };
-
   public selectedType = this.apiService.selectedType;
-  public types: { [key: string]: FilterModel } = {
-    'all': {
-      name: 'All'
-    },
-    'game': {
-      name: 'Full Game'
-    },
-    'loot': {
-      name: 'DLC & Loot'
-    },
-    'beta': {
-      name: 'Early Access'
-    }
-  }
+  public selectedPlatform = this.apiService.selectedPlatform;
+  public platforms: { [key: string]: FilterModel } = { ...platforms }
+  public types: { [key: string]: FilterModel } = {...giveawayTypes };
+  public platformsExpanded = false;
 
   public ngOnChanges(changes: SimpleChanges): void {
     if (changes['giveaways'].currentValue) {

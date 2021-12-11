@@ -12,6 +12,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatSelectModule } from '@angular/material/select';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [],
@@ -28,7 +29,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatDividerModule,
     MatChipsModule,
     MatProgressBarModule,
-    MatSelectModule
+    MatSelectModule,
+    MatProgressSpinnerModule
   ],
   exports: [
     MatFormFieldModule,
@@ -43,7 +45,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatDividerModule,
     MatChipsModule,
     MatProgressBarModule,
-    MatSelectModule
+    MatSelectModule,
+    MatProgressSpinnerModule
   ]
 })
 export class MaterialModule { }

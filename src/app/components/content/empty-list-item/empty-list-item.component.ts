@@ -8,7 +8,7 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class EmptyListItemComponent {
 
-  public constructor (private apiService: ApiService) { }
+  public constructor(private apiService: ApiService) { }
 
   public constructErrorMessage(): string {
     return `No active giveaway available with these conditions: type=${this.apiService.selectedType}, 

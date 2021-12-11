@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
-import { skip, Subscription, take } from 'rxjs';
+import { delay, skip, Subscription, take } from 'rxjs';
 
 import { Giveaway } from 'src/app/models/giveaway';
 import { ApiService } from 'src/app/services/api.service';
@@ -39,12 +39,13 @@ export class BannerComponent implements OnInit, OnDestroy {
   public ngOnInit(): void {
     this.subscriptions = [
       this.apiService.giveaways$.pipe(
+        delay(1000),
         skip(1), // skip initial value
         take(1)) // subscribe only to the relevance related fetch
         .subscribe((giveaways: Giveaway[]) => {
           this.bannerItems = this.createBannerItems([...giveaways]);
         })
-    ]
+    ];
   }
 
   public ngOnDestroy(): void {

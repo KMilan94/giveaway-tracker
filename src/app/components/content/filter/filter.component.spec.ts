@@ -6,6 +6,12 @@ import { FormsModule } from '@angular/forms';
 import { FilterComponent } from './filter.component';
 import { ApiService } from 'src/app/services/api.service';
 import { MaterialModule } from 'src/app/material.module';
+import { mockGiveaways } from 'src/app/data/giveaways';
+
+class MockApiService {
+    public selectedType = 'loot';
+    public selectedPlatform = 'ubisoft';
+}
 
 describe('FilterComponent', () => {
     let component: FilterComponent;
@@ -17,7 +23,7 @@ describe('FilterComponent', () => {
                 FilterComponent 
             ],
             providers: [ 
-                ApiService
+                { provide: ApiService, useClass: MockApiService }
             ],
             imports: [
                 HttpClientTestingModule, 
@@ -35,5 +41,10 @@ describe('FilterComponent', () => {
 
     it('should create', () => {
         expect(component).toBeTruthy();
+    });
+
+    it('should toggle platform when show hide button was pressed', () => {
+        component.giveaways = [...mockGiveaways];
+        fixture.detectChanges();
     });
 });

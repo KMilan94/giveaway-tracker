@@ -12,7 +12,8 @@
         </mat-radio-button>
     </mat-radio-group>
 
-    <button mat-button class="show-hide" (click)="togglePlatforms()">
+    <button mat-button class="show-hide" (click)="togglePlatforms()"
+        matTooltip="Show {{ platformsExpanded ? 'less' : 'more' }} options">
         {{ platformsExpanded ? 'Show less' : 'Show more' }}
         <mat-icon>
             {{ platformsExpanded ? 'expand_less' : 'expand_more' }}

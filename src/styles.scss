@@ -32,3 +32,7 @@ body::-webkit-scrollbar-thumb {
     border-radius: 20px;       /* roundness of the scroll thumb */
     border: 3px solid var(--foreground-dark);  /* creates padding around scroll thumb */
 }
+
+.mat-progress-spinner circle, .mat-spinner circle {
+    stroke: #40C4FF !important;
+}

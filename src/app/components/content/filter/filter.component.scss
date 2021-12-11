@@ -1,42 +1,41 @@
 @import '../../../../variables.scss';
 
 .filter-container {
-    margin: 1rem 0 1rem 1rem;
-    background-color: var(--foreground-dark);
+  margin: 1rem 0 1rem 1rem;
+  background-color: var(--foreground-dark);
+  color: var(--white);
+  padding: 1rem;
+  width: 220px;
+  border-radius: 5px;
+  margin-bottom: calc(#{$footerHeight} + #{$defaultPadding});
+
+  .category-title {
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--foreground-light);
+
+    mat-icon {
+      font-size: 1.2rem;
+      margin-right: .2rem;
+    }
+  }
+
+  .show-hide {
+    width: 100%;
+    color: var(--foreground-light);
+    font-size: .9rem;
+    margin-bottom: 15px;
+  }
+
+  .example-radio-group {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+  }
+
+  .example-radio-button {
     color: var(--white);
-    padding: 1rem;
-    width: 220px;
-    border-radius: 5px;
-    margin-bottom: calc(#{$footerHeight} + #{$defaultPadding});
+    margin: 5px;
+  }
 
-    .category-title {
-        font-weight: 500;
-        font-size: 1rem;
-        color: var(--foreground-light);
-        cursor: help;
-
-        mat-icon {
-          font-size: 1.2rem;
-          margin-right: .2rem;
-        }
-    }
-
-    .show-hide {
-        width: 100%;
-        color: var(--foreground-light);
-        font-size: .9rem;
-        margin-bottom: 15px;
-    }
-
-    .example-radio-group {
-        display: flex;
-        flex-direction: column;
-        margin: 15px 0;
-      }
-      
-      .example-radio-button {
-        color: var(--white);
-        margin: 5px;
-      }
-      
 }

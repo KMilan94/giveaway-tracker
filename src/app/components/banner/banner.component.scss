@@ -1,12 +1,35 @@
 @import '../../../variables.scss';
 
-.swiper {
-  height: 330px;
-  background-color: var(--foreground-dark);
-  border-radius: 5px;
+// ToDo: Can't resolve css variables declared in root due to ViewEncapsulation config
+
+$swiper-height: 330px;
+
+.banner {
   margin-left: $defaultPadding;
   margin-right: $defaultPadding;
   margin-top: $defaultPadding;
+  min-height: $swiper-height;
+  padding-bottom: 0 !important;
+  background-color: #393E46 !important;
+
+  &__title {
+    color: var(--foreground-light);
+    font-weight: 500;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+
+    mat-icon {
+      font-size: 1.3rem;
+      font-weight: normal;
+      margin-right: .5rem;
+    }
+  }
+}
+
+.swiper {
+  height: $swiper-height;
+  background-color: var(--foreground-dark);
+  border-radius: 5px;
 }
 
 .swiper-slide {
@@ -29,18 +52,27 @@
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 1; /* number of lines to show */
-    line-clamp: 1; 
+    -webkit-line-clamp: 1;
+    /* number of lines to show */
+    line-clamp: 1;
   }
 }
 
-.swiper-slide img {
+img {
   max-height: 200px;
 }
 
 .view-button {
   width: 100%;
-  background-color: #40C4FF; // Can't resolve css variables due to ViewEncapsulation config
+  background-color: #40C4FF; 
   color: #F7F6F2;
   margin-top: 1rem;
+}
+
+.loading {
+  width: 100%;
+  height: $swiper-height;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
