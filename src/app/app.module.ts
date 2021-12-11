@@ -20,7 +20,7 @@ import { DetailsComponent } from './components/details/details.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ListItemComponent } from './components/content/list-item/list-item.component';
 import { EmptyListItemComponent } from './components/content/empty-list-item/empty-list-item.component';
-import { HotGiveawaysComponent } from './components/content/hot-giveaways/hot-giveaways.component';
+import { BannerComponent } from './components/banner/banner.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +34,7 @@ import { HotGiveawaysComponent } from './components/content/hot-giveaways/hot-gi
       FooterComponent,
       ListItemComponent,
       EmptyListItemComponent,
-      HotGiveawaysComponent
+      BannerComponent
   ],
   imports: [
       BrowserModule,

@@ -1,0 +1,46 @@
+@import '../../../variables.scss';
+
+.swiper {
+  height: 330px;
+  background-color: var(--foreground-dark);
+  border-radius: 5px;
+  margin-left: $defaultPadding;
+  margin-right: $defaultPadding;
+  margin-top: $defaultPadding;
+}
+
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  width: auto;
+  margin-right: 1rem;
+  padding-top: 1rem;
+
+  .title {
+    text-align: center;
+    color: var(--white);
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1rem;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* number of lines to show */
+    line-clamp: 1; 
+  }
+}
+
+.swiper-slide img {
+  max-height: 200px;
+}
+
+.view-button {
+  width: 100%;
+  background-color: #40C4FF; // Can't resolve css variables due to ViewEncapsulation config
+  color: #F7F6F2;
+  margin-top: 1rem;
+}
