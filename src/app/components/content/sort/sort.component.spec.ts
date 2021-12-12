@@ -16,12 +16,12 @@ describe('SortComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [ 
-                SortComponent 
+            declarations: [
+                SortComponent
             ],
-            imports: [ 
-                MaterialModule, 
-                HttpClientTestingModule 
+            imports: [
+                MaterialModule,
+                HttpClientTestingModule
             ],
             providers: [
                 { provide: ApiService, useClass: MockApiService }

@@ -21,6 +21,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ListItemComponent } from './components/content/list-item/list-item.component';
 import { EmptyListItemComponent } from './components/content/empty-list-item/empty-list-item.component';
 import { BannerComponent } from './components/banner/banner.component';
+import { FabSettingsComponent } from './components/fab-settings/fab-settings.component';
 
 @NgModule({
     declarations: [
@@ -34,7 +35,8 @@ import { BannerComponent } from './components/banner/banner.component';
         FooterComponent,
         ListItemComponent,
         EmptyListItemComponent,
-        BannerComponent
+        BannerComponent,
+        FabSettingsComponent
     ],
     imports: [
         BrowserModule,
