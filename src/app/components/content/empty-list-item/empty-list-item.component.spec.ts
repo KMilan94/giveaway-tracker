@@ -35,7 +35,7 @@ describe('EmptyListItemComponent', () => {
   });
 
   afterEach(() => {
-    fixture.detectChanges();
+    fixture.destroy();
   });
 
   it('should create', () => {

@@ -23,6 +23,8 @@ export interface BannerItem {
   selected: boolean;
 }
 
+export const SHOW_DELAY = 1000;
+
 @Component({
   selector: 'app-banner',
   templateUrl: './banner.component.html',
@@ -39,7 +41,7 @@ export class BannerComponent implements OnInit, OnDestroy {
   public ngOnInit(): void {
     this.subscriptions = [
       this.apiService.giveaways$.pipe(
-        delay(1000),
+        delay(SHOW_DELAY),
         skip(1), // skip initial value
         take(1)) // subscribe only to the relevance related fetch
         .subscribe((giveaways: Giveaway[]) => {

@@ -11,26 +11,26 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./details.component.scss']
 })
 export class DetailsComponent implements OnInit, OnDestroy {
-    public id: number;
-    public giveaway: Giveaway | undefined;
-    private subscriptions: Subscription[] = [];
+  public id: number;
+  public giveaway: Giveaway | undefined;
+  private subscriptions: Subscription[] = [];
 
-    constructor(private route: ActivatedRoute, private apiService: ApiService) {
-      this.id = Number(this.route.snapshot.paramMap.get('id'));
-    }
+  constructor(private route: ActivatedRoute, private apiService: ApiService) {
+    this.id = Number(this.route.snapshot.paramMap.get('id'));
+  }
 
-    public ngOnInit(): void {
-        this.subscriptions = [
-          this.apiService.getGiveawayById(this.id).subscribe((giveaway: Giveaway) => {
-              console.log('asd: ', giveaway);
-              this.giveaway = giveaway;
-          }, (err) => {
-              console.error(err);
-          })
-        ]
-    }
+  public ngOnInit(): void {
+    this.subscriptions = [
+      this.apiService.getGiveawayById(this.id).subscribe((giveaway: Giveaway) => {
+        console.log('asd: ', giveaway);
+        this.giveaway = giveaway;
+      }, (err) => {
+        console.error(err);
+      })
+    ]
+  }
 
-    public ngOnDestroy(): void {
-        this.subscriptions.forEach((sub: Subscription) => sub.unsubscribe());
-    }
+  public ngOnDestroy(): void {
+    this.subscriptions.forEach((sub: Subscription) => sub.unsubscribe());
+  }
 }

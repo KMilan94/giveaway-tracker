@@ -6,6 +6,10 @@ import { SortComponent } from './sort.component';
 import { ApiService } from 'src/app/services/api.service';
 import { MaterialModule } from 'src/app/material.module';
 
+class MockApiService {
+    public selectedSort = 'date';
+}
+
 describe('SortComponent', () => {
     let component: SortComponent;
     let fixture: ComponentFixture<SortComponent>;
@@ -19,9 +23,9 @@ describe('SortComponent', () => {
                 MaterialModule, 
                 HttpClientTestingModule 
             ],
-            providers: [ 
-                ApiService 
-            ]
+            providers: [
+                { provide: ApiService, useClass: MockApiService }
+            ],
         }).compileComponents();
     });
 
@@ -29,6 +33,10 @@ describe('SortComponent', () => {
         fixture = TestBed.createComponent(SortComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
+    });
+
+    afterEach(() => {
+        fixture.destroy();
     });
 
     it('should create', () => {

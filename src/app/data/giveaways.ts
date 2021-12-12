@@ -14,7 +14,7 @@ export const mockGiveaways: Giveaway[] = [
     type: "Full Game",
     platforms: "PC, Steam, Epic Games Store, GOG",
     end_date: "N/A",
-    users: 2330,
+    users: 2640,
     status: "Active",
     gamerpower_url: "https://www.gamerpower.com/cave-story-s-secret-santa",
     open_giveaway: "https://www.gamerpower.com/open/cave-story-s-secret-santa"
@@ -32,7 +32,7 @@ export const mockGiveaways: Giveaway[] = [
     type: "Full Game",
     platforms: "PC, DRM-Free",
     end_date: "N/A",
-    users: 10960,
+    users: 11220,
     status: "Active",
     gamerpower_url: "https://www.gamerpower.com/exit-limbo-opening-pc",
     open_giveaway: "https://www.gamerpower.com/open/exit-limbo-opening-pc"
@@ -50,7 +50,7 @@ export const mockGiveaways: Giveaway[] = [
     type: "DLC & Loot",
     platforms: "PC",
     end_date: "N/A",
-    users: 470,
+    users: 490,
     status: "Active",
     gamerpower_url: "https://www.gamerpower.com/fiesta-online-amatheon-corruption-pack-keys",
     open_giveaway: "https://www.gamerpower.com/open/fiesta-online-amatheon-corruption-pack-keys"
@@ -68,7 +68,7 @@ export const mockGiveaways: Giveaway[] = [
     type: "Full Game",
     platforms: "PC, Steam",
     end_date: "2021-12-14 23:59:00",
-    users: 5800,
+    users: 6040,
     status: "Active",
     gamerpower_url: "https://www.gamerpower.com/call-of-juarez-gunslinger",
     open_giveaway: "https://www.gamerpower.com/open/call-of-juarez-gunslinger"
@@ -86,7 +86,7 @@ export const mockGiveaways: Giveaway[] = [
     type: "Full Game",
     platforms: "PC, Epic Games Store",
     end_date: "2021-12-16 23:59:00",
-    users: 2300,
+    users: 2370,
     status: "Active",
     gamerpower_url: "https://www.gamerpower.com/prison-architect",
     open_giveaway: "https://www.gamerpower.com/open/prison-architect"
@@ -104,7 +104,7 @@ export const mockGiveaways: Giveaway[] = [
     type: "Full Game",
     platforms: "PC, Epic Games Store",
     end_date: "2021-12-16 23:59:00",
-    users: 2880,
+    users: 2970,
     status: "Active",
     gamerpower_url: "https://www.gamerpower.com/godfall-challenger-edition",
     open_giveaway: "https://www.gamerpower.com/open/godfall-challenger-edition"
@@ -122,7 +122,7 @@ export const mockGiveaways: Giveaway[] = [
     type: "Early Access",
     platforms: "PC, Steam",
     end_date: "2021-12-15 23:59:00",
-    users: 3380,
+    users: 3440,
     status: "Active",
     gamerpower_url: "https://www.gamerpower.com/kartrider-drift-steam-beta-key-giveaway",
     open_giveaway: "https://www.gamerpower.com/open/kartrider-drift-steam-beta-key-giveaway"
@@ -140,7 +140,7 @@ export const mockGiveaways: Giveaway[] = [
     type: "DLC & Loot",
     platforms: "PC",
     end_date: "N/A",
-    users: 1850,
+    users: 1870,
     status: "Active",
     gamerpower_url: "https://www.gamerpower.com/archeage-moonfeather-griffin-and-gearset-key-giveaway",
     open_giveaway: "https://www.gamerpower.com/open/archeage-moonfeather-griffin-and-gearset-key-giveaway"
@@ -158,7 +158,7 @@ export const mockGiveaways: Giveaway[] = [
     type: "Full Game",
     platforms: "PC, Ubisoft Connect",
     end_date: "2021-12-14 23:59:00",
-    users: 6030,
+    users: 6050,
     status: "Active",
     gamerpower_url: "https://www.gamerpower.com/anno-1404-history-edition",
     open_giveaway: "https://www.gamerpower.com/open/anno-1404-history-edition"
@@ -176,7 +176,7 @@ export const mockGiveaways: Giveaway[] = [
     type: "Full Game",
     platforms: "PC, DRM-Free",
     end_date: "N/A",
-    users: 8480,
+    users: 8500,
     status: "Active",
     gamerpower_url: "https://www.gamerpower.com/die-young",
     open_giveaway: "https://www.gamerpower.com/open/die-young"
@@ -248,7 +248,7 @@ export const mockGiveaways: Giveaway[] = [
     type: "DLC & Loot",
     platforms: "PC, Playstation 4, Android, iOS",
     end_date: "N/A",
-    users: 4340,
+    users: 4350,
     status: "Active",
     gamerpower_url: "https://www.gamerpower.com/genshin-impact-v2-3-50-primogems-key-giveaway",
     open_giveaway: "https://www.gamerpower.com/open/genshin-impact-v2-3-50-primogems-key-giveaway"
@@ -266,7 +266,7 @@ export const mockGiveaways: Giveaway[] = [
     type: "DLC & Loot",
     platforms: "PC",
     end_date: "2021-12-15 23:59:00",
-    users: 1040,
+    users: 1050,
     status: "Active",
     gamerpower_url: "https://www.gamerpower.com/grand-fantasia-11th-anniversary-pack-key-giveaway",
     open_giveaway: "https://www.gamerpower.com/open/grand-fantasia-11th-anniversary-pack-key-giveaway"
@@ -302,7 +302,7 @@ export const mockGiveaways: Giveaway[] = [
     type: "DLC & Loot",
     platforms: "PC",
     end_date: "N/A",
-    users: 1740,
+    users: 1760,
     status: "Active",
     gamerpower_url: "https://www.gamerpower.com/smite-krampus-cernunnos-skin-key-giveaway",
     open_giveaway: "https://www.gamerpower.com/open/smite-krampus-cernunnos-skin-key-giveaway"
@@ -356,7 +356,7 @@ export const mockGiveaways: Giveaway[] = [
     type: "DLC & Loot",
     platforms: "PC",
     end_date: "N/A",
-    users: 1950,
+    users: 1960,
     status: "Active",
     gamerpower_url: "https://www.gamerpower.com/dead-frontier-2-survivor-starter-pack-key-giveaway",
     open_giveaway: "https://www.gamerpower.com/open/dead-frontier-2-survivor-starter-pack-key-giveaway"
@@ -392,7 +392,7 @@ export const mockGiveaways: Giveaway[] = [
     type: "DLC & Loot",
     platforms: "PC",
     end_date: "N/A",
-    users: 1140,
+    users: 1150,
     status: "Active",
     gamerpower_url: "https://www.gamerpower.com/smite-3-day-account-booster-key-giveaway",
     open_giveaway: "https://www.gamerpower.com/open/smite-3-day-account-booster-key-giveaway"
@@ -446,7 +446,7 @@ export const mockGiveaways: Giveaway[] = [
     type: "DLC & Loot",
     platforms: "PC",
     end_date: "N/A",
-    users: 1200,
+    users: 1210,
     status: "Active",
     gamerpower_url: "https://www.gamerpower.com/mars-tomorrow-starter-pack-key-more",
     open_giveaway: "https://www.gamerpower.com/open/mars-tomorrow-starter-pack-key-more"
@@ -500,7 +500,7 @@ export const mockGiveaways: Giveaway[] = [
     type: "DLC & Loot",
     platforms: "PC",
     end_date: "N/A",
-    users: 1980,
+    users: 2000,
     status: "Active",
     gamerpower_url: "https://www.gamerpower.com/blade-and-soul-trooper-outfit-set-pet-pack-key-giveaway",
     open_giveaway: "https://www.gamerpower.com/open/blade-and-soul-trooper-outfit-set-pet-pack-key-giveaway"
@@ -572,7 +572,7 @@ export const mockGiveaways: Giveaway[] = [
     type: "DLC & Loot",
     platforms: "PC",
     end_date: "N/A",
-    users: 5680,
+    users: 5700,
     status: "Active",
     gamerpower_url: "https://www.gamerpower.com/elyon-free-mount-keys",
     open_giveaway: "https://www.gamerpower.com/open/elyon-free-mount-keys"
@@ -608,7 +608,7 @@ export const mockGiveaways: Giveaway[] = [
     type: "DLC & Loot",
     platforms: "PC, Steam",
     end_date: "2022-01-12 23:59:00",
-    users: 9250,
+    users: 9260,
     status: "Active",
     gamerpower_url: "https://www.gamerpower.com/black-desert-free-gift-pack-dlc-steam",
     open_giveaway: "https://www.gamerpower.com/open/black-desert-free-gift-pack-dlc-steam"
@@ -680,7 +680,7 @@ export const mockGiveaways: Giveaway[] = [
     type: "DLC & Loot",
     platforms: "PC",
     end_date: "N/A",
-    users: 2400,
+    users: 2410,
     status: "Active",
     gamerpower_url: "https://www.gamerpower.com/runescape-currency-pack-key-giveaway",
     open_giveaway: "https://www.gamerpower.com/open/runescape-currency-pack-key-giveaway"
@@ -716,7 +716,7 @@ export const mockGiveaways: Giveaway[] = [
     type: "DLC & Loot",
     platforms: "PC, Epic Games Store",
     end_date: "2021-09-20 23:59:00",
-    users: 18220,
+    users: 18260,
     status: "Active",
     gamerpower_url: "https://www.gamerpower.com/hitman-3-access-pass-hitman-1-goty-edition-dlc",
     open_giveaway: "https://www.gamerpower.com/open/hitman-3-access-pass-hitman-1-goty-edition-dlc"
@@ -770,7 +770,7 @@ export const mockGiveaways: Giveaway[] = [
     type: "DLC & Loot",
     platforms: "PC",
     end_date: "N/A",
-    users: 3350,
+    users: 3380,
     status: "Active",
     gamerpower_url: "https://www.gamerpower.com/splitgate-alienware-weapon-wrap-key-giveaway",
     open_giveaway: "https://www.gamerpower.com/open/splitgate-alienware-weapon-wrap-key-giveaway"
@@ -1040,7 +1040,7 @@ export const mockGiveaways: Giveaway[] = [
     type: "DLC & Loot",
     platforms: "PC",
     end_date: "N/A",
-    users: 4360,
+    users: 4370,
     status: "Active",
     gamerpower_url: "https://www.gamerpower.com/world-of-warships-godzilla-vs-kong-supply-drop-key",
     open_giveaway: "https://www.gamerpower.com/open/world-of-warships-godzilla-vs-kong-supply-drop-key"
@@ -1148,7 +1148,7 @@ export const mockGiveaways: Giveaway[] = [
     type: "DLC & Loot",
     platforms: "PC",
     end_date: "N/A",
-    users: 31170,
+    users: 31190,
     status: "Active",
     gamerpower_url: "https://www.gamerpower.com/world-of-warships-huge-bonuses-code",
     open_giveaway: "https://www.gamerpower.com/open/world-of-warships-huge-bonuses-code"
@@ -1292,7 +1292,7 @@ export const mockGiveaways: Giveaway[] = [
     type: "Full Game",
     platforms: "PC, GOG",
     end_date: "N/A",
-    users: 107270,
+    users: 107510,
     status: "Active",
     gamerpower_url: "https://www.gamerpower.com/get-the-witcher-enhanced-edition-for-free",
     open_giveaway: "https://www.gamerpower.com/open/get-the-witcher-enhanced-edition-for-free"
@@ -1310,7 +1310,7 @@ export const mockGiveaways: Giveaway[] = [
     type: "DLC & Loot",
     platforms: "PC",
     end_date: "N/A",
-    users: 7230,
+    users: 7240,
     status: "Active",
     gamerpower_url: "https://www.gamerpower.com/drag-special-event-key-giveaway",
     open_giveaway: "https://www.gamerpower.com/open/drag-special-event-key-giveaway"
@@ -1364,7 +1364,7 @@ export const mockGiveaways: Giveaway[] = [
     type: "DLC & Loot",
     platforms: "PC, Steam",
     end_date: "N/A",
-    users: 8020,
+    users: 8030,
     status: "Active",
     gamerpower_url: "https://www.gamerpower.com/two-point-hospital-sega-60th-items-dlc",
     open_giveaway: "https://www.gamerpower.com/open/two-point-hospital-sega-60th-items-dlc"
@@ -1382,7 +1382,7 @@ export const mockGiveaways: Giveaway[] = [
     type: "Full Game",
     platforms: "PC, Steam",
     end_date: "N/A",
-    users: 56370,
+    users: 56410,
     status: "Active",
     gamerpower_url: "https://www.gamerpower.com/free-nights-into-dreams-steam",
     open_giveaway: "https://www.gamerpower.com/open/free-nights-into-dreams-steam"
@@ -1472,7 +1472,7 @@ export const mockGiveaways: Giveaway[] = [
     type: "Full Game",
     platforms: "Xbox 360",
     end_date: "N/A",
-    users: 11230,
+    users: 11240,
     status: "Active",
     gamerpower_url: "https://www.gamerpower.com/free-too-human-on-xbox-360",
     open_giveaway: "https://www.gamerpower.com/open/free-too-human-on-xbox-360"
@@ -1508,7 +1508,7 @@ export const mockGiveaways: Giveaway[] = [
     type: "DLC & Loot",
     platforms: "PC, Steam",
     end_date: "2020-05-31 23:59:00",
-    users: 4780,
+    users: 4790,
     status: "Active",
     gamerpower_url: "https://www.gamerpower.com/super-circuit-breakers-payne",
     open_giveaway: "https://www.gamerpower.com/open/super-circuit-breakers-payne"
@@ -1526,7 +1526,7 @@ export const mockGiveaways: Giveaway[] = [
     type: "Full Game",
     platforms: "PC, Steam",
     end_date: "N/A",
-    users: 30520,
+    users: 30530,
     status: "Active",
     gamerpower_url: "https://www.gamerpower.com/higurashi-when-they-cry-hou-ch-1-onikakushi",
     open_giveaway: "https://www.gamerpower.com/open/higurashi-when-they-cry-hou-ch-1-onikakushi"
@@ -1580,7 +1580,7 @@ export const mockGiveaways: Giveaway[] = [
     type: "DLC & Loot",
     platforms: "PC, Steam",
     end_date: "N/A",
-    users: 93520,
+    users: 93550,
     status: "Active",
     gamerpower_url: "https://www.gamerpower.com/payday-2-free-in-game-items-giveaway",
     open_giveaway: "https://www.gamerpower.com/open/payday-2-free-in-game-items-giveaway"
@@ -1616,7 +1616,7 @@ export const mockGiveaways: Giveaway[] = [
     type: "Full Game",
     platforms: "PC, Steam",
     end_date: "N/A",
-    users: 83590,
+    users: 83600,
     status: "Active",
     gamerpower_url: "https://www.gamerpower.com/free-endless-space-collection",
     open_giveaway: "https://www.gamerpower.com/open/free-endless-space-collection"
@@ -1724,7 +1724,7 @@ export const mockGiveaways: Giveaway[] = [
     type: "DLC & Loot",
     platforms: "PC, Playstation 4, Xbox One, Nintendo Switch",
     end_date: "N/A",
-    users: 48880,
+    users: 48890,
     status: "Active",
     gamerpower_url: "https://www.gamerpower.com/brawlhalla-katars-of-the-raven-weapon-skin",
     open_giveaway: "https://www.gamerpower.com/open/brawlhalla-katars-of-the-raven-weapon-skin"
@@ -1742,7 +1742,7 @@ export const mockGiveaways: Giveaway[] = [
     type: "DLC & Loot",
     platforms: "PC, Steam",
     end_date: "N/A",
-    users: 18350,
+    users: 18360,
     status: "Active",
     gamerpower_url: "https://www.gamerpower.com/dreadnought-free-10-gift-pack-steam-keys",
     open_giveaway: "https://www.gamerpower.com/open/dreadnought-free-10-gift-pack-steam-keys"
@@ -1814,7 +1814,7 @@ export const mockGiveaways: Giveaway[] = [
     type: "DLC & Loot",
     platforms: "PC, Playstation 4, Xbox One",
     end_date: "N/A",
-    users: 34990,
+    users: 35000,
     status: "Active",
     gamerpower_url: "https://www.gamerpower.com/free-rocket-league-codes",
     open_giveaway: "https://www.gamerpower.com/open/free-rocket-league-codes"

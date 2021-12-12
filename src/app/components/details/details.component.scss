@@ -1,113 +1,114 @@
 @import '../../../variables.scss';
 
 .details-container {
-    padding: $defaultPadding;
-    margin-bottom: 80px;
+  padding: $defaultPadding;
+  margin-bottom: 80px;
 
-    mat-card {
-        background-color: var(--foreground-dark);
+  mat-card {
+    background-color: var(--foreground-dark);
 
-        mat-card-header {
-            margin-bottom: 16px;
+    mat-card-header {
+      margin-bottom: 16px;
 
-            img {
-                object-fit: contain;
-                border-radius: 5px;
-            }
+      img {
+        object-fit: contain;
+        border-radius: 5px;
+      }
 
-            .header-content {
-                margin-left: 16px;
-                display: flex;
-                flex-direction: column;
+      .header-content {
+        margin-left: 16px;
+        display: flex;
+        flex-direction: column;
 
-                mat-card-title {
-                    font-size: 1.2rem;
-                    line-height: 1.5rem;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    display: -webkit-box;
-                    -webkit-line-clamp: 1; /* number of lines to show */
-                    line-clamp: 1; 
-                    -webkit-box-orient: vertical;
-                }
-            
-                mat-card-subtitle {
-                    font-size: 1rem;
-                    line-height: 1.2rem;
-                    color: var(--primary);
-                    font-weight: 500;
-                }
-
-                .platform {
-                    color: var(--grey);
-                    font-size: .9rem;
-                    margin-bottom: .5rem;
-                }
-        
-                .description {
-                    color: var(--primary);
-                    font-size: 1rem;
-                    margin-bottom: 0;
-        
-                    .free {
-                        color: var(--white);
-                        margin-right: .5rem;
-                        font-weight: 500;
-                    }
-        
-                    .worth {
-                        text-decoration: line-through;
-                        font-size: .9rem;
-                        color: var(--foreground-light);
-        
-                        &.na {
-                            text-decoration: unset;
-                        }
-                    }
-                }
-            }
-
-            .obtain-button {
-                color: var(--white);
-                background-color: var(--foreground-light);
-                height: 3rem;
-                width: 16rem;
-                border-radius: 5px;
-                margin-top: .5rem;
-                margin-bottom: .5rem;
-                font-size: 1.2rem;
-                border: 1px solid var(--white);
-            }
+        mat-card-title {
+          font-size: 1.2rem;
+          line-height: 1.5rem;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          /* number of lines to show */
+          line-clamp: 1;
+          -webkit-box-orient: vertical;
         }
-    
-        mat-card-content {
-            margin-top: $defaultPadding;
-            white-space: pre-line;
+
+        mat-card-subtitle {
+          font-size: 1rem;
+          line-height: 1.2rem;
+          color: var(--primary);
+          font-weight: 500;
+        }
+
+        .platform {
+          color: var(--grey);
+          font-size: .9rem;
+          margin-bottom: .5rem;
+        }
+
+        .description {
+          color: var(--primary);
+          font-size: 1rem;
+          margin-bottom: 0;
+
+          .free {
             color: var(--white);
+            margin-right: .5rem;
+            font-weight: 500;
+          }
+
+          .worth {
+            text-decoration: line-through;
             font-size: .9rem;
-            line-height: 1.5rem;
+            color: var(--foreground-light);
 
-            .instructions {
-                ::ng-deep a {
-                    color: var(--primary) !important;
-                    text-decoration: unset;
-                }
+            &.na {
+              text-decoration: unset;
             }
-
-            .how-to-get {
-                color: var(--primary);
-                font-weight: 500;
-                margin-bottom: 1rem;
-                font-size: 1.2rem;
-            }
+          }
         }
+      }
+
+      .obtain-button {
+        color: var(--white);
+        background-color: var(--foreground-light);
+        height: 3rem;
+        width: 16rem;
+        border-radius: 5px;
+        margin-top: .5rem;
+        margin-bottom: .5rem;
+        font-size: 1.2rem;
+        border: 1px solid var(--white);
+      }
     }
 
-    ::ng-deep .mat-card-header-text {
-        margin: 0px;
+    mat-card-content {
+      margin-top: $defaultPadding;
+      white-space: pre-line;
+      color: var(--white);
+      font-size: .9rem;
+      line-height: 1.5rem;
+
+      .instructions {
+        ::ng-deep a {
+          color: var(--primary) !important;
+          text-decoration: unset;
+        }
+      }
+
+      .how-to-get {
+        color: var(--primary);
+        font-weight: 500;
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+      }
     }
+  }
+
+  ::ng-deep .mat-card-header-text {
+    margin: 0px;
+  }
 }
 
 .spacer {
-    flex: 1 1 auto;
-  }
+  flex: 1 1 auto;
+}

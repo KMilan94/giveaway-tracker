@@ -23,32 +23,32 @@ import { EmptyListItemComponent } from './components/content/empty-list-item/emp
 import { BannerComponent } from './components/banner/banner.component';
 
 @NgModule({
-  declarations: [
-      AppComponent,
-      HeaderComponent,
-      ContentComponent,
-      FilterComponent,
-      ListComponent,
-      SortComponent,
-      DetailsComponent,
-      FooterComponent,
-      ListItemComponent,
-      EmptyListItemComponent,
-      BannerComponent
-  ],
-  imports: [
-      BrowserModule,
-      AppRoutingModule,
-      BrowserAnimationsModule,
-      HttpClientModule,
-      FormsModule,
-      FlexLayoutModule,
-      MaterialModule,
-      SwiperModule
-  ],
-  providers: [],
-  bootstrap: [ 
-      AppComponent 
-  ]
+    declarations: [
+        AppComponent,
+        HeaderComponent,
+        ContentComponent,
+        FilterComponent,
+        ListComponent,
+        SortComponent,
+        DetailsComponent,
+        FooterComponent,
+        ListItemComponent,
+        EmptyListItemComponent,
+        BannerComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        FormsModule,
+        FlexLayoutModule,
+        MaterialModule,
+        SwiperModule
+    ],
+    providers: [],
+    bootstrap: [
+        AppComponent
+    ]
 })
 export class AppModule { }

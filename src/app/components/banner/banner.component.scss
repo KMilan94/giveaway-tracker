@@ -41,6 +41,9 @@ $swiper-height: 330px;
   width: auto;
   margin-right: 1rem;
   padding-top: 1rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 
   .title {
     text-align: center;
@@ -64,7 +67,7 @@ img {
 
 .view-button {
   width: 100%;
-  background-color: #40C4FF; 
+  background-color: #40C4FF;
   color: #F7F6F2;
   margin-top: 1rem;
 }

@@ -19,18 +19,18 @@ export class FilterComponent {
 
   @Input() public giveaways!: Giveaway[];
 
-  public constructor(private apiService: ApiService) {}
+  public constructor(private apiService: ApiService) { }
 
   public selectedType = this.apiService.selectedType;
   public selectedPlatform = this.apiService.selectedPlatform;
   public platforms: { [key: string]: FilterModel } = { ...platforms }
-  public types: { [key: string]: FilterModel } = {...giveawayTypes };
+  public types: { [key: string]: FilterModel } = { ...giveawayTypes };
   public platformsExpanded = false;
 
   public ngOnChanges(changes: SimpleChanges): void {
     if (changes['giveaways'].currentValue) {
       const isEmpty = changes['giveaways'].currentValue.status === 0;
-      const giveaways: Giveaway[] = changes['giveaways'].currentValue as Giveaway[] ;
+      const giveaways: Giveaway[] = changes['giveaways'].currentValue as Giveaway[];
       this.initPlatforms(giveaways, isEmpty);
       this.initTypes(giveaways, isEmpty);
     }
@@ -71,7 +71,7 @@ export class FilterComponent {
     this.platforms['all'] = {
       ...this.platforms['all'],
       count: giveaways.length || 0
-    }
+    };
   }
 
   public getCount(dict: { [key: string]: FilterModel }): number {
@@ -83,14 +83,14 @@ export class FilterComponent {
   }
 
   public setPlatform(platform: string): void {
-    if(platform != this.selectedPlatform) {
+    if (platform != this.selectedPlatform) {
       this.selectedPlatform = this.apiService.selectedPlatform = platform as PlatformType;
       this.apiService.fetchGiveaways();
     }
   }
 
   public setGameType(type: string): void {
-    if(type != this.selectedType) {
+    if (type != this.selectedType) {
       this.selectedType = this.apiService.selectedType = type as GameType;
       this.apiService.fetchGiveaways();
     }

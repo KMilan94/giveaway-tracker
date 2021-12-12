@@ -6,6 +6,7 @@ import { EmptyListItemComponent } from '../empty-list-item/empty-list-item.compo
 import { ListItemComponent } from '../list-item/list-item.component';
 import { ApiService } from 'src/app/services/api.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { mockGiveaways } from 'src/app/data/giveaways';
 
 describe('ListComponent', () => {
     let component: ListComponent;
@@ -34,7 +35,29 @@ describe('ListComponent', () => {
         fixture.detectChanges();
     });
 
+    afterEach(() => {
+        fixture.destroy();
+    });
+
     it('should create', () => {
         expect(component).toBeTruthy();
+    });
+
+    it('should render list items when giveaways set', () => {
+        component.giveaways = [ ...mockGiveaways ];
+        fixture.detectChanges();
+        const listItems = fixture.nativeElement.querySelectorAll('app-list-item');
+        expect(listItems.length).toEqual([...mockGiveaways].length);
+        const emptyListItems = fixture.nativeElement.querySelectorAll('app-empty-list-item');
+        expect(emptyListItems.length).toEqual(0);
+    })
+
+    it('should render empty list item when giveaways set and it has no value', () => {
+        component.giveaways = [];
+        fixture.detectChanges();
+        const emptyListItems = fixture.nativeElement.querySelectorAll('app-empty-list-item');
+        expect(emptyListItems.length).toEqual(1);
+        const listItems = fixture.nativeElement.querySelectorAll('app-list-item');
+        expect(listItems.length).toEqual(0);
     });
 });

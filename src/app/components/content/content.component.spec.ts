@@ -14,17 +14,17 @@ describe('ContentComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [ 
-                ContentComponent 
+            declarations: [
+                ContentComponent
             ],
-            imports: [ 
+            imports: [
                 HttpClientTestingModule,
                 MaterialModule
             ],
             schemas: [
                 CUSTOM_ELEMENTS_SCHEMA
             ],
-            providers: [ ApiService ]
+            providers: [ApiService]
         }).compileComponents();
         // apiService = TestBed.inject(ApiService);
     });

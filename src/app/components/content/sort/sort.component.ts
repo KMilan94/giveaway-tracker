@@ -19,12 +19,12 @@ export class SortComponent {
   @Input() public giveaways!: Giveaway[];
 
   public selectedSort = this.apiService.selectedSort;
-  public sortOptions: {[key: string]: SortModel} = {...sortOptions};
+  public sortOptions: { [key: string]: SortModel } = { ...sortOptions };
 
   public constructor(private apiService: ApiService) { }
 
   public setSort(sortType: string): void {
-    if(sortType != this.selectedSort) {
+    if (sortType != this.selectedSort) {
       this.selectedSort = this.apiService.selectedSort = sortType as SortType;
       this.apiService.fetchGiveaways();
     }

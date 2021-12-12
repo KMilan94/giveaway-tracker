@@ -1,9 +1,6 @@
-<!-- Card: https://material.angular.io/components/card/overview -->
 <div class="grid-container">
     <div fxLayout="row wrap" fxLayoutGap="16px grid">
-
         <app-empty-list-item *ngIf="giveaways.length === 0"></app-empty-list-item>
-
         <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="50%" *ngFor="let giveaway of giveaways">
             <app-list-item [giveaway]="giveaway"></app-list-item>
         </div>

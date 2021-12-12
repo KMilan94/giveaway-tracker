@@ -15,5 +15,4 @@ export interface Giveaway {
     status: string;
     gamerpower_url: string;
     open_giveaway: string;
-
 }

@@ -10,26 +10,26 @@ describe('DetailsComponent', () => {
     let fixture: ComponentFixture<DetailsComponent>;
 
     beforeEach(async () => {
-      await TestBed.configureTestingModule({
-          declarations: [ 
-              DetailsComponent 
+        await TestBed.configureTestingModule({
+            declarations: [
+                DetailsComponent
             ],
-          imports: [ 
-              HttpClientTestingModule 
+            imports: [
+                HttpClientTestingModule
             ],
-          providers: [ {
-            provide: ActivatedRoute,
-            useValue: {
-                snapshot: {
-                    paramMap: {
-                        get(): string {
-                            return '123';
+            providers: [{
+                provide: ActivatedRoute,
+                useValue: {
+                    snapshot: {
+                        paramMap: {
+                            get(): string {
+                                return '123';
+                            }
                         }
                     }
                 }
-            }
-          }]
-      }).compileComponents();
+            }]
+        }).compileComponents();
     });
 
     beforeEach(() => {

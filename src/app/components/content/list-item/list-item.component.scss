@@ -1,68 +1,70 @@
 mat-card {
-    background-color: var(--foreground-dark);
-    cursor: pointer;
+  background-color: var(--foreground-dark);
+  cursor: pointer;
 
-    img {
-        height: 12rem;
-        object-fit: cover;
+  img {
+    height: 12rem;
+    object-fit: cover;
+  }
+
+  mat-card-content {
+    height: 5rem;
+
+    .platform {
+      color: var(--white);
+      font-weight: 500;
+      font-size: .9rem;
     }
 
-    mat-card-content {
-        height: 5rem;
+    .description {
+      color: var(--primary);
+      font-size: 1rem;
 
-        .platform {
-            color: var(--white);
-            font-weight: 500;
-            font-size: .9rem;
+      .free {
+        color: var(--foreground-light);
+        margin-right: .5rem;
+        font-weight: 500;
+      }
+
+      .worth {
+        text-decoration: line-through;
+        font-size: .9rem;
+        color: var(--primary);
+
+        &.na {
+          text-decoration: unset;
         }
-
-        .description {
-            color: var(--primary);
-            font-size: 1rem;
-
-            .free {
-                color: var(--foreground-light);
-                margin-right: .5rem;
-                font-weight: 500;
-            }
-
-            .worth {
-                text-decoration: line-through;
-                font-size: .9rem;
-                color: var(--primary);
-
-                &.na {
-                    text-decoration: unset;
-                }
-            }
-        }
+      }
     }
+  }
 
-    mat-card-content > p {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 2; /* number of lines to show */
-        line-clamp: 2; 
-        -webkit-box-orient: vertical;
-    }
+  mat-card-content>p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* number of lines to show */
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
 
-    mat-card-title {
-        font-size: 1.2rem;
-        line-height: 1.5rem;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 1; /* number of lines to show */
-        line-clamp: 1; 
-        -webkit-box-orient: vertical;
-    }
+  mat-card-title {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    /* number of lines to show */
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }
 }
 
-mat-card:hover > img {
-    opacity: .7;
+mat-card:hover>img {
+  opacity: .7;
 }
 
 ::ng-deep .mat-card-header-text {
-    margin: 0px;
+  margin: 0px;
 }

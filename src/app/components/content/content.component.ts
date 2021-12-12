@@ -12,18 +12,18 @@ import { ApiService } from '../../services/api.service';
 export class ContentComponent implements OnInit, OnDestroy {
   public giveAways!: Giveaway[];
   private subscriptions: Subscription[] = [];
-  
+
   public constructor(private apiService: ApiService) { }
 
   public ngOnInit(): void {
     this.subscriptions = [
       this.apiService.giveaways$.subscribe((giveaways: Giveaway[]) => {
-          console.log('Result: ', giveaways);
-          this.giveAways = giveaways;
+        console.log('Result: ', giveaways);
+        this.giveAways = giveaways;
       })
     ]
 
-    if(this.giveAways) {
+    if (this.giveAways) {
       this.apiService.fetchGiveaways();
     }
   }

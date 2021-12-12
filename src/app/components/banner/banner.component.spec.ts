@@ -1,12 +1,14 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { BehaviorSubject } from 'rxjs';
+
+import { SwiperModule } from 'swiper/angular';
 
 import { Giveaway } from 'src/app/models/giveaway';
 import { ApiService } from 'src/app/services/api.service';
-import { SwiperModule } from 'swiper/angular';
-import { BannerComponent } from './banner.component';
+import { BannerComponent, SHOW_DELAY } from './banner.component';
 import { mockGiveaways } from '../../data/giveaways';
+import { MaterialModule } from 'src/app/material.module';
 
 class MockApiService {
   public giveaways$ = new BehaviorSubject<Giveaway[] | null>(null);
@@ -19,16 +21,16 @@ describe('BannerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BannerComponent ],
-      imports: [ 
+      declarations: [BannerComponent],
+      imports: [
         HttpClientTestingModule,
-        SwiperModule
-       ],
-       providers: [
-         { provide: ApiService, useClass: MockApiService } 
-       ]
-    })
-    .compileComponents();
+        SwiperModule,
+        MaterialModule
+      ],
+      providers: [
+        { provide: ApiService, useClass: MockApiService }
+      ]
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -46,12 +48,13 @@ describe('BannerComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should generate banner items when giveaways emitted', () => {
-    const giveaways: Giveaway[] = [...mockGiveaways];
+  it('should generate banner items when giveaways emitted', fakeAsync(() => {
     spyOn(component, 'createBannerItems');
-    fixture.detectChanges();
+    apiService.giveaways$.next([]);
+    tick(SHOW_DELAY);
+    const giveaways: Giveaway[] = [...mockGiveaways];
     apiService.giveaways$.next(giveaways);
-    fixture.detectChanges();
+    tick(SHOW_DELAY);
     expect(component.createBannerItems).toHaveBeenCalledOnceWith(giveaways);
-  });
+  }));
 });

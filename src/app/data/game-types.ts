@@ -13,4 +13,23 @@ export const giveawayTypes: { [key: string]: FilterModel } = {
     'beta': {
         name: 'Early Access'
     }
+};
+
+export const typesData: { [key: string]: FilterModel } = {
+    "all": {
+        name: 'All',
+        count: 101
+    },
+    "game": {
+        name: 'Full Game',
+        count: 17
+    },
+    "loot": {
+        name: 'DLC & Loot',
+        count: 80
+    },
+    'beta': {
+        name: 'Early Access',
+        count: 3
+    }
 }

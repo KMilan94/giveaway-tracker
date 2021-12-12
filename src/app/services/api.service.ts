@@ -33,7 +33,7 @@ export class ApiService {
         'x-rapidapi-key': 'e675b0c6damsh1d075ad3910cd0bp19c1e9jsn8a402ca06cc0'
       }
     }).subscribe((giveaways: Giveaway[]) => {
-        this.giveaways$.next(giveaways);
+      this.giveaways$.next(giveaways);
     });
   }
 
@@ -42,7 +42,7 @@ export class ApiService {
     // check it is already loaded
     const giveaway = this.giveaways$.value.find((giveaway: Giveaway) => giveaway.id === id);
     if (giveaway) {
-        return of(giveaway);
+      return of(giveaway);
     }
 
     return this.http.get<Giveaway>(`https://gamerpower.p.rapidapi.com/api/giveaway?id=${id}`, {
