@@ -10,7 +10,7 @@ $swiper-height: 330px;
   margin-top: $defaultPadding;
   min-height: $swiper-height;
   padding-bottom: 0 !important;
-  background-color: #393E46 !important;
+  background-color: var(--foreground-dark);
 
   &__title {
     color: var(--foreground-light);

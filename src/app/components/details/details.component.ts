@@ -17,6 +17,7 @@ export class DetailsComponent implements OnInit, OnDestroy {
 
   constructor(private route: ActivatedRoute, private apiService: ApiService) {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
+    console.log('Id: ', this.id);
   }
 
   public ngOnInit(): void {
