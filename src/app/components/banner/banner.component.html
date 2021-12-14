@@ -5,11 +5,11 @@
   </mat-card-title>
   <swiper [slidesPerView]="'auto'" [centeredSlides]="false" [autoHeight]="true" [grabCursor]="true"
     [keyboard]="{enabled: true}" [autoplay]="{
-delay: 3000,
-disableOnInteraction: true
+delay: 5000,
+disableOnInteraction: false
 }" [navigation]="true" [pagination]="{
 clickable: true
-}" style="--swiper-navigation-color: #40C4FF;--swiper-pagination-color: #40C4FF" *ngIf="bannerItems; else loading">
+}" style="--swiper-navigation-color: #ECB365;--swiper-pagination-color: #ECB365" *ngIf="bannerItems; else loading">
     <ng-template swiperSlide *ngFor="let bannerItem of bannerItems">
       <div class="title" data-swiper-parallax="-300">{{ bannerItem.name }}</div>
       <img src="{{ bannerItem.url}}" />

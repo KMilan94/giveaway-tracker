@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MaterialModule } from 'src/app/material.module';
 
 import { FabSettingsComponent } from './fab-settings.component';
 
@@ -8,6 +9,7 @@ describe('FabSettingsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [MaterialModule],
       declarations: [FabSettingsComponent]
     }).compileComponents();
   });
