@@ -18,14 +18,9 @@ export class ContentComponent implements OnInit, OnDestroy {
   public ngOnInit(): void {
     this.subscriptions = [
       this.apiService.giveaways$.subscribe((giveaways: Giveaway[]) => {
-        console.log('Result: ', giveaways);
         this.giveAways = giveaways;
       })
     ]
-
-    if (this.giveAways) {
-      this.apiService.fetchGiveaways();
-    }
   }
 
   public ngOnDestroy(): void {

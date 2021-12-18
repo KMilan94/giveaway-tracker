@@ -1,11 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 
 :root {
-    --background: #1F1D36; 
-    --foreground-dark: #3F3351;
+    --background: #1B262C ; 
+    --foreground-dark: #0F4C75;
     --foreground-light: #77ACF1;
     --grey: #C9CCD5;
-    --primary: #E9A6A6;
+    --primary: #ff8000;
     --white: #F7F6F2;
 }
 
@@ -28,11 +28,11 @@ body::-webkit-scrollbar-track {
 }
   
 body::-webkit-scrollbar-thumb {
-    background-color: var(--primary);    /* color of the scroll thumb */
+    background-color: var(--foreground-light);    /* color of the scroll thumb */
     border-radius: 20px;       /* roundness of the scroll thumb */
     border: 3px solid var(--foreground-dark);  /* creates padding around scroll thumb */
 }
 
 .mat-progress-spinner circle, .mat-spinner circle {
-    stroke: #40C4FF !important;
+    stroke: #77ACF1 !important;
 }

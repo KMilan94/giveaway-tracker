@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { getColorFromGameType } from 'src/app/data/rarity-colors';
 import { Giveaway } from 'src/app/models/giveaway';
 
 const DEFAULT_IMAGE_PATH = '../../../../assets/no_image.png';
@@ -17,18 +18,9 @@ export class ListItemComponent {
     $event.target.src = DEFAULT_IMAGE_PATH;
   }
 
-  public getColor(giveType: string): Record<string, string> {
-    let style;
-
-    switch (giveType) {
-      case 'DLC & Loot': style = '#a335ee'; break;
-      case 'Full Game': style = '#ff8000'; break;
-      case 'Early Access':
-      default: style = '#0070dd'; break;
-    }
-
+  public getBackgroundColor(giveType: string): Record<string, string> {
     return {
-      'background-color': style
-    }
+      'background-color': getColorFromGameType(giveType)
+    };
   }
 }

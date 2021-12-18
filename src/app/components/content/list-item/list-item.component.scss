@@ -21,7 +21,7 @@ mat-card {
       font-size: 1rem;
 
       .free {
-        color: var(--foreground-light);
+        color: var(--primary);
         margin-right: .5rem;
         font-weight: 500;
       }
@@ -29,7 +29,7 @@ mat-card {
       .worth {
         text-decoration: line-through;
         font-size: .9rem;
-        color: var(--primary);
+        color: var(--grey);
 
         &.na {
           text-decoration: unset;

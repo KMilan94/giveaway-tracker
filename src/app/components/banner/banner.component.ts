@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { delay, skip, Subscription, take } from 'rxjs';
+import { getColorFromGameType } from 'src/app/data/rarity-colors';
 
 import { Giveaway } from 'src/app/models/giveaway';
 import { ApiService } from 'src/app/services/api.service';
@@ -20,7 +21,7 @@ export interface BannerItem {
   id: number;
   name: string;
   url: string;
-  selected: boolean;
+  color: string;
 }
 
 export const SHOW_DELAY = 1000;
@@ -55,13 +56,13 @@ export class BannerComponent implements OnInit, OnDestroy {
   }
 
   public createBannerItems(giveaway: Giveaway[]): BannerItem[] {
-    const hotGiveaways: Giveaway[] = giveaway.splice(0, 8);
-    return hotGiveaways.map((giveaway: Giveaway) => {
+    const bannerItems: Giveaway[] = giveaway.splice(0, 8);
+    return bannerItems.map((giveaway: Giveaway) => {
       return {
         id: giveaway.id,
         url: giveaway.image,
         name: giveaway.title,
-        selected: false
+        color: getColorFromGameType(giveaway.type)
       }
     });
   }

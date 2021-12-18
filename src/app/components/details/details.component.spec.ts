@@ -1,12 +1,12 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { DetailsComponent } from './details.component';
 
 describe('DetailsComponent', () => {
     let component: DetailsComponent;
-    let route: ActivatedRoute;
     let fixture: ComponentFixture<DetailsComponent>;
 
     beforeEach(async () => {
@@ -15,9 +15,11 @@ describe('DetailsComponent', () => {
                 DetailsComponent
             ],
             imports: [
-                HttpClientTestingModule
+                HttpClientTestingModule,
+                RouterTestingModule
             ],
-            providers: [{
+            providers: [
+                {
                 provide: ActivatedRoute,
                 useValue: {
                     snapshot: {

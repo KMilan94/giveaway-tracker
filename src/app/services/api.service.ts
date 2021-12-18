@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, of } from 'rxjs';
+import { BehaviorSubject, finalize, Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 import { Giveaway } from '../models/giveaway';
@@ -14,15 +14,19 @@ export type GameType = 'all' | 'game' | 'loot' | 'beta';
   providedIn: 'root'
 })
 export class ApiService {
+  public loading$ = new BehaviorSubject<boolean>(false);
   public giveaways$ = new BehaviorSubject<Giveaway[]>([]);
-
   public selectedPlatform: PlatformType = 'all';
   public selectedType: GameType = 'all';
   public selectedSort: SortType = 'date';
 
-  public constructor(private http: HttpClient) { }
+  public constructor(private http: HttpClient) {
+    this.fetchGiveaways();
+  }
 
   public fetchGiveaways(): void {
+    this.loading$.next(true);
+
     const sortParam = `sort-by=${this.selectedSort}`;
     const platformParam = this.selectedPlatform === 'all' ? '' : `platform=${this.selectedPlatform}`;
     const typeParam = this.selectedType === 'all' ? '' : `type=${this.selectedType}`;
@@ -32,7 +36,11 @@ export class ApiService {
         'x-rapidapi-host': 'gamerpower.p.rapidapi.com',
         'x-rapidapi-key': 'e675b0c6damsh1d075ad3910cd0bp19c1e9jsn8a402ca06cc0'
       }
-    }).subscribe((giveaways: Giveaway[]) => {
+    }).pipe(
+      finalize(() => {
+        this.loading$.next(false);
+      })
+    ).subscribe((giveaways: Giveaway[]) => {
       this.giveaways$.next(giveaways);
     });
   }

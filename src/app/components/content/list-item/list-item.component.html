@@ -6,7 +6,7 @@
         <mat-card-title>{{ giveaway.title }}</mat-card-title>
         <mat-card-subtitle>
             <mat-chip-list aria-label="Fish selection">
-                <mat-chip [ngStyle]="getColor(giveaway.type)">{{ giveaway.type }}</mat-chip>
+                <mat-chip [ngStyle]="getBackgroundColor(giveaway.type)">{{ giveaway.type }}</mat-chip>
             </mat-chip-list>
         </mat-card-subtitle>
 

@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { ActivatedRoute, NavigationStart, Router } from '@angular/router';
+import { filter, Subscription } from 'rxjs';
 
 import { Giveaway } from 'src/app/models/giveaway';
 import { ApiService } from 'src/app/services/api.service';
@@ -15,23 +15,37 @@ export class DetailsComponent implements OnInit, OnDestroy {
   public giveaway: Giveaway | undefined;
   private subscriptions: Subscription[] = [];
 
-  constructor(private route: ActivatedRoute, private apiService: ApiService) {
+  constructor(private router: Router, private route: ActivatedRoute, private apiService: ApiService) {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
-    console.log('Id: ', this.id);
+    this.loadGiveaway();
   }
 
   public ngOnInit(): void {
     this.subscriptions = [
-      this.apiService.getGiveawayById(this.id).subscribe((giveaway: Giveaway) => {
-        console.log('asd: ', giveaway);
-        this.giveaway = giveaway;
-      }, (err) => {
-        console.error(err);
+      this.router.events.pipe(
+        filter(event => event instanceof NavigationStart)
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      ).subscribe((event: any) => {
+        console.log('event: ', event)
+        if (event.url.match(/\/details\/+/g)) {
+          this.id = Number(event.url.split('/').pop());
+          this.loadGiveaway();
+        }
       })
     ]
   }
 
   public ngOnDestroy(): void {
     this.subscriptions.forEach((sub: Subscription) => sub.unsubscribe());
+  }
+
+  public loadGiveaway(): void {
+    this.subscriptions.push(
+      this.apiService.getGiveawayById(this.id).subscribe((giveaway: Giveaway) => {
+        this.giveaway = giveaway;
+      }, (err) => {
+        console.error(err);
+      })
+    )
   }
 }

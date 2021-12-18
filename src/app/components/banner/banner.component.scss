@@ -67,8 +67,9 @@ img {
 
 .view-button {
   width: 100%;
-  background-color: #E8E8E8;
-  color: #A6F0C6;
+  background-color: var(--background);
+  font-weight: 500;  
+  color: var(--primary);
   margin-top: 1rem;
 }
 
