@@ -9,12 +9,12 @@ delay: 5000,
 disableOnInteraction: false
 }" [navigation]="true" [pagination]="{
 clickable: true
-}" style="--swiper-navigation-color: #77ACF1;--swiper-pagination-color: #77ACF1" *ngIf="bannerItems; else loading">
+}" style="--swiper-navigation-color: #ff8000;--swiper-pagination-color: #ff8000" *ngIf="bannerItems; else loading">
     <ng-template swiperSlide *ngFor="let bannerItem of bannerItems">
       <div class="title" data-swiper-parallax="-300">{{ bannerItem.name }}</div>
       <img src="{{ bannerItem.url}}" />
       <button mat-raised-button class="view-button" routerLink="/details/{{ bannerItem.id }}">
-        Get giveaway</button>
+        Check giveaway</button>
     </ng-template>
   </swiper>
 </mat-card>

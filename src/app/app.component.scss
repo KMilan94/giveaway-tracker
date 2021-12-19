@@ -2,6 +2,10 @@
   min-height: 100%;
   position: relative;
 
+  &__footer {
+    height: 64px
+  }
+
   &__banner {
     width: 100%;
   }

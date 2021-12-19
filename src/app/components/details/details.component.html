@@ -1,10 +1,15 @@
 <div class="details-container">
-    <mat-card *ngIf="giveaway">
-        <mat-card-header>
-            <img src="{{ giveaway.thumbnail }}" alt="image failed to load">
+    <mat-card *ngIf="giveaway; else loading">
+        <mat-card-header fxLayout="row" fxLayout.xs="column" fxLayout.sm="column">
+            <img [ngClass.xs]="'small-image'" [ngClass.sm]="'small-image'" src="{{ giveaway.thumbnail }}"
+                alt="image failed to load">
             <div class="header-content">
                 <mat-card-title>{{ giveaway.title }}</mat-card-title>
-                <mat-card-subtitle>{{ giveaway.type }}</mat-card-subtitle>
+                <mat-card-subtitle>
+                    <mat-chip-list>
+                        <mat-chip [ngStyle]="getBackgroundColor(giveaway.type)">{{ giveaway.type }}</mat-chip>
+                    </mat-chip-list>
+                </mat-card-subtitle>
                 <span class="spacer"></span>
                 <p class="platform">{{ giveaway.platforms }}</p>
                 <p class="description">
@@ -14,7 +19,8 @@
             </div>
             <span class="spacer"></span>
             <a mat-raised-button class="obtain-button" fxLayout="column" fxLayoutAlign="center center"
-                href="{{ giveaway.open_giveaway_url }}" target="_blank">
+                [ngClass.xs]="'small-button'" [ngClass.sm]="'small-button'" href="{{ giveaway.open_giveaway_url }}"
+                target="_blank">
                 Get giveaway
             </a>
         </mat-card-header>
@@ -26,3 +32,9 @@
         </mat-card-content>
     </mat-card>
 </div>
+
+<ng-template #loading>
+    <div class="loading">
+        <mat-spinner></mat-spinner>
+    </div>
+</ng-template>

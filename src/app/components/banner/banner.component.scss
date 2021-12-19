@@ -2,8 +2,6 @@
 
 // ToDo: Can't resolve css variables declared in root due to ViewEncapsulation config
 
-$swiper-height: 330px;
-
 .banner {
   margin-left: $defaultPadding;
   margin-right: $defaultPadding;
@@ -28,8 +26,6 @@ $swiper-height: 330px;
 
 .swiper {
   height: $swiper-height;
-  background-color: var(--foreground-dark);
-  border-radius: 5px;
 }
 
 .swiper-slide {
@@ -62,7 +58,7 @@ $swiper-height: 330px;
 }
 
 img {
-  max-height: 200px;
+  height: 200px;
 }
 
 .view-button {

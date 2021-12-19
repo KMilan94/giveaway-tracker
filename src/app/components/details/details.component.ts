@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationStart, Router } from '@angular/router';
 import { filter, Subscription } from 'rxjs';
+import { getColorFromGameType } from 'src/app/data/rarity-colors';
 
 import { Giveaway } from 'src/app/models/giveaway';
 import { ApiService } from 'src/app/services/api.service';
@@ -26,7 +27,6 @@ export class DetailsComponent implements OnInit, OnDestroy {
         filter(event => event instanceof NavigationStart)
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
       ).subscribe((event: any) => {
-        console.log('event: ', event)
         if (event.url.match(/\/details\/+/g)) {
           this.id = Number(event.url.split('/').pop());
           this.loadGiveaway();
@@ -37,6 +37,12 @@ export class DetailsComponent implements OnInit, OnDestroy {
 
   public ngOnDestroy(): void {
     this.subscriptions.forEach((sub: Subscription) => sub.unsubscribe());
+  }
+
+  public getBackgroundColor(giveType: string): Record<string, string> {
+    return {
+      'background-color': getColorFromGameType(giveType)
+    };
   }
 
   public loadGiveaway(): void {
