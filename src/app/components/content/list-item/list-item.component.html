@@ -1,6 +1,5 @@
 <ng-container *ngIf="giveaway">
-    <mat-card routerLink="/details/{{ giveaway.id }}">
-
+    <mat-card (click)="viewDetails(giveaway.id)">
         <img mat-card-image src="{{ giveaway.image }}" (error)="onImageLoadingFailed($event)"
             alt="image failed to load">
         <mat-card-title>{{ giveaway.title }}</mat-card-title>
@@ -9,7 +8,6 @@
                 <mat-chip [ngStyle]="getBackgroundColor(giveaway.type)">{{ giveaway.type }}</mat-chip>
             </mat-chip-list>
         </mat-card-subtitle>
-
         <mat-card-content fxLayout="column" fxLayoutAlign="flex-end">
             <p class="platform">
                 {{ giveaway.platforms }}

@@ -1,4 +1,4 @@
-<div class="filter-container">
+<div class="filter-container" [ngStyle]="{ 'margin': layout === 'component' ? ' 1rem 0 1rem 1rem' : '0' }">
 
     <!-- Platform fields -->
     <label class="category-title" fxLayout="row" fxLayoutAlign="start center"
@@ -27,8 +27,8 @@
         <mat-icon>category</mat-icon>Type
     </label>
     <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" [(ngModel)]="selectedType">
-        <mat-radio-button class="type-button" *ngFor="let type of types | keyvalue"
-            (click)="setGameType(type.key)" [value]="type.key">
+        <mat-radio-button class="type-button" *ngFor="let type of types | keyvalue" (click)="setGameType(type.key)"
+            [value]="type.key">
             {{ type.value.name }} ({{ type.value.count || 0 }})
         </mat-radio-button>
     </mat-radio-group>

@@ -49,8 +49,6 @@ export class DetailsComponent implements OnInit, OnDestroy {
     this.subscriptions.push(
       this.apiService.getGiveawayById(this.id).subscribe((giveaway: Giveaway) => {
         this.giveaway = giveaway;
-      }, (err) => {
-        console.error(err);
       })
     )
   }

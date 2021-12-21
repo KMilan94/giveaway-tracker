@@ -2,7 +2,11 @@
 
 .details-container {
   padding: $defaultPadding;
-  margin-bottom: 80px;
+
+
+  &__back-button {
+    color: var(--primary);
+  }
 
   mat-card {
     background-color: var(--foreground-dark);
@@ -99,6 +103,10 @@
         font-size: 1.2rem;
       }
     }
+  }
+
+  &__back-button {
+    margin-top: $defaultPadding;
   }
 
   ::ng-deep .mat-card-header-text {

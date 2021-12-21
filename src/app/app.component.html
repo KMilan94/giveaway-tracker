@@ -1,17 +1,24 @@
-<div class="giveaway-tracker">
-  <div class="giveaway-tracker__header">
-    <app-header></app-header>
-  </div>
+<mat-sidenav-container class="sidenav-contaner" autosize>
+  <mat-sidenav #sidenav mode="over" class="sidenav-container" (openedChange)="setSidenavState($event)"
+    [opened]="sidenavOpened">
+    <app-filter [giveaways]="giveAways" [layout]="'sidenav'"></app-filter>
+  </mat-sidenav>
 
-  <div class="giveaway-tracker__banner">
-    <app-banner></app-banner>
-  </div>
+  <div class="giveaway-tracker">
+    <div class="giveaway-tracker__header">
+      <app-header></app-header>
+    </div>
 
-  <div class="giveaway-tracker__content">
-    <router-outlet></router-outlet>
-  </div>
+    <div class="giveaway-tracker__banner">
+      <app-banner></app-banner>
+    </div>
 
-  <div class="giveaway-tracker__footer">
-    <app-footer></app-footer>
+    <div class="giveaway-tracker__content">
+      <router-outlet></router-outlet>
+    </div>
+
+    <div class="giveaway-tracker__footer">
+      <app-footer></app-footer>
+    </div>
   </div>
-</div>
+</mat-sidenav-container>

@@ -1,3 +1,3 @@
-<button mat-fab class="fab-settings">
+<button mat-fab class="fab-settings" (click)="setSidenavState(true)" *ngIf="!sidenavOpened">
     <mat-icon>settings</mat-icon>
 </button>

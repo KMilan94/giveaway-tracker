@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { getColorFromGameType } from 'src/app/data/rarity-colors';
 import { Giveaway } from 'src/app/models/giveaway';
 
@@ -13,6 +14,8 @@ export class ListItemComponent {
 
   @Input() giveaway!: Giveaway;
 
+  public constructor(public router: Router) { }
+
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public onImageLoadingFailed($event: any): void {
     $event.target.src = DEFAULT_IMAGE_PATH;
@@ -22,5 +25,9 @@ export class ListItemComponent {
     return {
       'background-color': getColorFromGameType(giveType)
     };
+  }
+
+  public viewDetails(id: number): void {
+    this.router.navigateByUrl(`/details/${id}`);
   }
 }

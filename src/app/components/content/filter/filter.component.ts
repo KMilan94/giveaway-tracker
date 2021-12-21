@@ -10,6 +10,8 @@ export type FilterModel = {
   count?: number;
 }
 
+export type Layout = 'component' | 'sidenav';
+
 @Component({
   selector: 'app-filter',
   templateUrl: './filter.component.html',
@@ -18,6 +20,7 @@ export type FilterModel = {
 export class FilterComponent {
 
   @Input() public giveaways!: Giveaway[];
+  @Input() public layout: Layout = 'component';
 
   public constructor(private apiService: ApiService) { }
 
@@ -30,7 +33,7 @@ export class FilterComponent {
   public ngOnChanges(changes: SimpleChanges): void {
     if (changes['giveaways'].currentValue) {
       const isEmpty = changes['giveaways'].currentValue.status === 0;
-      const giveaways: Giveaway[] = changes['giveaways'].currentValue as Giveaway[];
+      const giveaways: Giveaway[] = [...changes['giveaways'].currentValue as Giveaway[]];
       this.initPlatforms(giveaways, isEmpty);
       this.initTypes(giveaways, isEmpty);
     }

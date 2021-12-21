@@ -9,6 +9,7 @@ export type SortType = 'date' | 'value' | 'popularity';
 export type PlatformType = 'all' | 'pc' | 'steam' | 'epic-games-store' | 'ubisoft' | 'gog' | 'itchio' | 'ps4' | 'ps5'
   | 'xbox-one' | 'xbox-series-xs' | 'switch' | 'android' | 'ios' | 'vr' | 'battlenet' | 'origin' | 'drm-free' | 'xbox-360';
 export type GameType = 'all' | 'game' | 'loot' | 'beta';
+export type Order = 'descending' | 'ascending';
 
 @Injectable({
   providedIn: 'root'

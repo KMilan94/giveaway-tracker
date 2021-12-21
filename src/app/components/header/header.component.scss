@@ -4,7 +4,7 @@ mat-toolbar {
   width: 100%;
 
   .title {
-    color: var(--white);
+    color: var(--primary);
     font-weight: 500;
     font-size: 1.5rem;
     letter-spacing: 1px;
@@ -20,13 +20,5 @@ mat-toolbar {
     color: var(--grey);
     font-size: .9rem;
     margin-right: 2rem;
-  }
-
-  .language-selector {
-    width: 100px;
-    margin-right: 1rem;
-    color: var(--foreground-light);
-    font-size: 1rem;
-    text-transform: capitalize;
   }
 }

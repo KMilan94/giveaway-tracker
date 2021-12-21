@@ -1,7 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { distinctUntilChanged, Subscription, switchMap } from 'rxjs';
-
 import { ApiService } from 'src/app/services/api.service';
 import { Worth } from '../../models/worth';
 
@@ -11,12 +10,10 @@ import { Worth } from '../../models/worth';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit, OnDestroy {
-
+  public worth!: Worth;
   public languages: string[] = ['english', 'hungarian'];
   public currentLanguage = 'english';
   private subscriptions: Subscription[] = [];
-
-  public worth!: Worth;
 
   public constructor(private router: Router, private apiService: ApiService) { }
 

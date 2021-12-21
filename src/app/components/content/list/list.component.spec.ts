@@ -7,6 +7,7 @@ import { ListItemComponent } from '../list-item/list-item.component';
 import { ApiService } from 'src/app/services/api.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { mockGiveaways } from 'src/app/data/giveaways';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('ListComponent', () => {
     let component: ListComponent;
@@ -24,7 +25,8 @@ describe('ListComponent', () => {
             ],
             imports: [
                 MaterialModule,
-                HttpClientTestingModule
+                HttpClientTestingModule,
+                RouterTestingModule
             ]
         }).compileComponents();
     });

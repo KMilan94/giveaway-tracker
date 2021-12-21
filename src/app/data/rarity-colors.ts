@@ -1,5 +1,3 @@
-// Globally exported functions
-
 export const getColorFromGameType = (gameType: string): string => {
     let style;
 

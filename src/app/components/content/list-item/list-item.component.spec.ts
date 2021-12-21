@@ -1,6 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 import { MaterialModule } from 'src/app/material.module';
 import { ListItemComponent } from './list-item.component';
+
+const RouterSpy = jasmine.createSpyObj(
+    'Router',
+    ['navigate']
+  );
 
 describe('ListItemComponent', () => {
     let component: ListItemComponent;
@@ -12,9 +18,14 @@ describe('ListItemComponent', () => {
                 ListItemComponent
             ],
             imports: [
-                MaterialModule
+                MaterialModule,
+                RouterTestingModule
             ]
         }).compileComponents();
+    });
+
+    afterEach(() => {
+        fixture.destroy();
     });
 
     beforeEach(() => {

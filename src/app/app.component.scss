@@ -10,3 +10,8 @@
     width: 100%;
   }
 }
+
+.sidenav-container {
+  position: fixed;
+  background-color: var(--foreground-dark);
+}

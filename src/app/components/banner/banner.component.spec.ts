@@ -9,6 +9,7 @@ import { ApiService } from 'src/app/services/api.service';
 import { BannerComponent, SHOW_DELAY } from './banner.component';
 import { mockGiveaways } from '../../data/giveaways';
 import { MaterialModule } from 'src/app/material.module';
+import { RouterTestingModule } from '@angular/router/testing';
 
 class MockApiService {
   public giveaways$ = new BehaviorSubject<Giveaway[] | null>(null);
@@ -25,7 +26,8 @@ describe('BannerComponent', () => {
       imports: [
         HttpClientTestingModule,
         SwiperModule,
-        MaterialModule
+        MaterialModule,
+        RouterTestingModule
       ],
       providers: [
         { provide: ApiService, useClass: MockApiService }

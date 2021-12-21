@@ -34,5 +34,9 @@ body::-webkit-scrollbar-thumb {
 }
 
 .mat-progress-spinner circle, .mat-spinner circle {
-    stroke: #77ACF1 !important;
+    stroke: var(--foreground-light) !important;
+}
+
+.mat-drawer-inner-container::-webkit-scrollbar {
+    display: none;
 }
