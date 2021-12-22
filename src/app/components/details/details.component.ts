@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationStart, Router } from '@angular/router';
 import { filter, Subscription } from 'rxjs';
-import { getColorFromGameType } from 'src/app/data/rarity-colors';
 
+import { getColorFromGameType } from 'src/app/data/rarity-colors';
 import { Giveaway } from 'src/app/models/giveaway';
 import { ApiService } from 'src/app/services/api.service';
 
@@ -47,8 +47,8 @@ export class DetailsComponent implements OnInit, OnDestroy {
 
   public loadGiveaway(): void {
     this.subscriptions.push(
-      this.apiService.getGiveawayById(this.id).subscribe((giveaway: Giveaway) => {
-        this.giveaway = giveaway;
+      this.apiService.giveaways$.subscribe((giveaways: Giveaway[]) => {
+        this.giveaway = giveaways.find((giveaway: Giveaway) => giveaway.id === this.id);
       })
     )
   }

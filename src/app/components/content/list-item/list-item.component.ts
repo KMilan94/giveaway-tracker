@@ -12,7 +12,7 @@ const DEFAULT_IMAGE_PATH = '../../../../assets/no_image.png';
 })
 export class ListItemComponent {
 
-  @Input() giveaway!: Giveaway;
+  @Input() giveaway: Giveaway;
 
   public constructor(public router: Router) { }
 

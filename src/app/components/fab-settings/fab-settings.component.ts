@@ -9,7 +9,7 @@ import { ContextService } from 'src/app/services/context.service';
 })
 export class FabSettingsComponent {
   public sidenavOpened = false;
-  private subscriptions!: Subscription[];
+  private subscriptions: Subscription[];
 
   public constructor(private contextService: ContextService) { }
 

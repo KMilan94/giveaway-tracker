@@ -7,14 +7,5 @@ import { Giveaway } from '../../../models/giveaway';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent {
-
-  @Input() public set giveaways(giveaways: Giveaway[]) {
-    this._giveaways = Array.isArray(giveaways) ? giveaways : [];
-  }
-
-  public get giveaways(): Giveaway[] {
-    return this._giveaways;
-  }
-
-  private _giveaways: Giveaway[] = [];
+  @Input() public giveaways: Giveaway[] = [];
 }

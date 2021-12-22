@@ -12,7 +12,6 @@ class MockContextService {
 describe('FabSettingsComponent', () => {
   let component: FabSettingsComponent;
   let fixture: ComponentFixture<FabSettingsComponent>;
-  let contextService: ContextService;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -25,10 +24,13 @@ describe('FabSettingsComponent', () => {
   });
 
   beforeEach(() => {
-    contextService = TestBed.inject(ContextService);
     fixture = TestBed.createComponent(FabSettingsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+  });
+
+  afterEach(() => {
+    fixture.destroy();0
   });
 
   it('should create', () => {

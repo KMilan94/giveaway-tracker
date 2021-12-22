@@ -24,8 +24,6 @@ export interface BannerItem {
   color: string;
 }
 
-export const SHOW_DELAY = 1000;
-
 @Component({
   selector: 'app-banner',
   templateUrl: './banner.component.html',
@@ -34,7 +32,7 @@ export const SHOW_DELAY = 1000;
 })
 export class BannerComponent implements OnInit, OnDestroy {
 
-  public bannerItems!: BannerItem[];
+  public bannerItems: BannerItem[];
   private subscriptions: Subscription[] = [];
 
   constructor(private apiService: ApiService) { }
@@ -42,7 +40,6 @@ export class BannerComponent implements OnInit, OnDestroy {
   public ngOnInit(): void {
     this.subscriptions = [
       this.apiService.giveaways$.pipe(
-        delay(SHOW_DELAY),
         skip(1), // skip initial value
         take(1)) // subscribe only to the relevance related fetch
         .subscribe((giveaways: Giveaway[]) => {

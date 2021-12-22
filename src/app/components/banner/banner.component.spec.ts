@@ -1,15 +1,15 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 import { BehaviorSubject } from 'rxjs';
 
 import { SwiperModule } from 'swiper/angular';
 
 import { Giveaway } from 'src/app/models/giveaway';
 import { ApiService } from 'src/app/services/api.service';
-import { BannerComponent, SHOW_DELAY } from './banner.component';
+import { BannerComponent } from './banner.component';
 import { mockGiveaways } from '../../data/giveaways';
 import { MaterialModule } from 'src/app/material.module';
-import { RouterTestingModule } from '@angular/router/testing';
 
 class MockApiService {
   public giveaways$ = new BehaviorSubject<Giveaway[] | null>(null);
@@ -50,13 +50,11 @@ describe('BannerComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should generate banner items when giveaways emitted', fakeAsync(() => {
+  it('should generate banner items when giveaways emitted', () => {
     spyOn(component, 'createBannerItems');
-    apiService.giveaways$.next([]);
-    tick(SHOW_DELAY);
     const giveaways: Giveaway[] = [...mockGiveaways];
     apiService.giveaways$.next(giveaways);
-    tick(SHOW_DELAY);
+    fixture.detectChanges();
     expect(component.createBannerItems).toHaveBeenCalledOnceWith(giveaways);
-  }));
+  });
 });

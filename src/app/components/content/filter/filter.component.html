@@ -5,8 +5,7 @@
         matTooltip="Select an option to filter for platform">
         <mat-icon>computer</mat-icon>Platforms
     </label>
-    <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
-        [(ngModel)]="selectedPlatform">
+    <mat-radio-group class="category-group" [(ngModel)]="selectedPlatform">
         <mat-radio-button class="platform-button" [value]="platform.key" (click)="setPlatform(platform.key)"
             *ngFor="let platform of platforms | keyvalue | slice: 0 : platformsExpanded ? getCount(platforms) : 5">
             {{ platform.value.name }} ({{ platform.value.count || 0 }})
@@ -21,12 +20,12 @@
         </mat-icon>
     </button>
 
-    <!-- Category -->
+    <!-- Giveaway type fields -->
     <label class="category-title" fxLayout="row" fxLayoutAlign="start center"
         matTooltip="Select an option to filter for giveaway type">
         <mat-icon>category</mat-icon>Type
     </label>
-    <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" [(ngModel)]="selectedType">
+    <mat-radio-group class="category-group" [(ngModel)]="selectedType">
         <mat-radio-button class="type-button" *ngFor="let type of types | keyvalue" (click)="setGameType(type.key)"
             [value]="type.key">
             {{ type.value.name }} ({{ type.value.count || 0 }})

@@ -3,7 +3,6 @@
 .details-container {
   padding: $defaultPadding;
 
-
   &__back-button {
     color: var(--primary);
   }
@@ -12,7 +11,7 @@
     background-color: var(--foreground-dark);
 
     mat-card-header {
-      margin-bottom: 16px;
+      margin-bottom: $defaultPadding;
 
       img {
         object-fit: contain;
@@ -46,23 +45,23 @@
           font-weight: 500;
           font-size: .9rem;
         }
-    
+
         .description {
           color: var(--primary);
           font-size: 1rem;
           margin-bottom: 0;
-    
+
           .free {
             color: var(--primary);
             margin-right: .5rem;
             font-weight: 500;
           }
-    
+
           .worth {
             text-decoration: line-through;
             font-size: .9rem;
             color: var(--grey);
-    
+
             &.na {
               text-decoration: unset;
             }

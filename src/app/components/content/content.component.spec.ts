@@ -10,7 +10,6 @@ import { MaterialModule } from 'src/app/material.module';
 describe('ContentComponent', () => {
     let component: ContentComponent;
     let fixture: ComponentFixture<ContentComponent>;
-    // let apiService: ApiService;
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
@@ -26,13 +25,16 @@ describe('ContentComponent', () => {
             ],
             providers: [ApiService]
         }).compileComponents();
-        // apiService = TestBed.inject(ApiService);
     });
 
     beforeEach(() => {
         fixture = TestBed.createComponent(ContentComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
+    });
+
+    afterEach(() => {
+        fixture.destroy();
     });
 
     it('should create', () => {

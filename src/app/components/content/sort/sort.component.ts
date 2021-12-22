@@ -16,7 +16,7 @@ export type SortModel = {
 })
 export class SortComponent {
 
-  @Input() public giveaways!: Giveaway[];
+  @Input() public giveaways: Giveaway[];
 
   public selectedSort = this.apiService.selectedSort;
   public sortOptions: { [key: string]: SortModel } = { ...sortOptions };

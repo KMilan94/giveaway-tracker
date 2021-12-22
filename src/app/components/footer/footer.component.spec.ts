@@ -24,6 +24,10 @@ describe('FooterComponent', () => {
         fixture.detectChanges();
     });
 
+    afterEach(() => {
+        fixture.destroy();0
+    });
+
     it('should create', () => {
         expect(component).toBeTruthy();
     });

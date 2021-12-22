@@ -2,14 +2,12 @@
 
 .filter-container {
   background-color: var(--foreground-dark);
-  // position: sticky;
-  // top: 0;
   max-height: 100vh;
   overflow-y: auto;
   overflow-x: hidden;
   color: var(--white);
   padding: 1rem;
-  width: 220px;
+  width: $filterWidth;
   border-radius: 5px;
   margin-bottom: calc(#{$footerHeight} + #{$defaultPadding});
 
@@ -31,7 +29,7 @@
     margin-bottom: 15px;
   }
 
-  .example-radio-group {
+  .category-group {
     display: flex;
     flex-direction: column;
     margin: 15px 0;

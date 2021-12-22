@@ -1,13 +1,13 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { ListComponent } from './list.component';
 import { MaterialModule } from 'src/app/material.module';
 import { EmptyListItemComponent } from '../empty-list-item/empty-list-item.component';
 import { ListItemComponent } from '../list-item/list-item.component';
 import { ApiService } from 'src/app/services/api.service';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { mockGiveaways } from 'src/app/data/giveaways';
-import { RouterTestingModule } from '@angular/router/testing';
 
 describe('ListComponent', () => {
     let component: ListComponent;

@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  host: 'gamerpower.p.rapidapi.com',
+  key: 'e675b0c6damsh1d075ad3910cd0bp19c1e9jsn8a402ca06cc0'
 };
 
 /*

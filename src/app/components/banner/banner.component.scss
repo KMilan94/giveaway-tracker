@@ -1,7 +1,5 @@
 @import '../../../variables.scss';
 
-// ToDo: Can't resolve css variables declared in root due to ViewEncapsulation config
-
 .banner {
   margin-left: $defaultPadding;
   margin-right: $defaultPadding;
@@ -59,6 +57,10 @@
 
 img {
   height: 200px;
+}
+
+img:hover {
+  opacity: .7;
 }
 
 .view-button {

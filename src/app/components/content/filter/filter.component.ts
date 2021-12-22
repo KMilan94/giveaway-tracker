@@ -1,7 +1,7 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
+
 import { ApiService, PlatformType, GameType } from 'src/app/services/api.service';
 import { Giveaway } from '../../../models/giveaway';
-
 import { platforms } from 'src/app/data/platforms';
 import { giveawayTypes } from 'src/app/data/game-types';
 
@@ -19,7 +19,7 @@ export type Layout = 'component' | 'sidenav';
 })
 export class FilterComponent {
 
-  @Input() public giveaways!: Giveaway[];
+  @Input() public giveaways: Giveaway[];
   @Input() public layout: Layout = 'component';
 
   public constructor(private apiService: ApiService) { }
@@ -32,17 +32,16 @@ export class FilterComponent {
 
   public ngOnChanges(changes: SimpleChanges): void {
     if (changes['giveaways'].currentValue) {
-      const isEmpty = changes['giveaways'].currentValue.status === 0;
       const giveaways: Giveaway[] = [...changes['giveaways'].currentValue as Giveaway[]];
-      this.initPlatforms(giveaways, isEmpty);
-      this.initTypes(giveaways, isEmpty);
+      this.initPlatforms(giveaways);
+      this.initTypes(giveaways);
     }
   }
 
-  private initTypes(giveaways: Giveaway[], isEmpty: boolean): void {
+  private initTypes(giveaways: Giveaway[]): void {
     Object.entries(this.types).forEach(
       ([key, value]) => {
-        const occurance = isEmpty ? 0 : giveaways.filter((giveaway: Giveaway) => {
+        const occurance = giveaways.filter((giveaway: Giveaway) => {
           return giveaway.type.toLowerCase().includes(value.name.toLowerCase());
         }).length || 0;
         this.types[key] = {
@@ -58,10 +57,10 @@ export class FilterComponent {
     };
   }
 
-  private initPlatforms(giveaways: Giveaway[], isEmpty: boolean): void {
+  private initPlatforms(giveaways: Giveaway[]): void {
     Object.entries(this.platforms).forEach(
       ([key, value]) => {
-        const occurance = isEmpty ? 0 : giveaways.filter((giveaway: Giveaway) => {
+        const occurance = giveaways.filter((giveaway: Giveaway) => {
           return giveaway.platforms.toLowerCase().includes(value.name.toLowerCase())
         }).length || 0;
         this.platforms[key] = {

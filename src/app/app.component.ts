@@ -11,8 +11,8 @@ import { ContextService } from './services/context.service';
 })
 export class AppComponent implements OnInit, OnDestroy {
   public sidenavOpened = false;
-  public giveAways!: Giveaway[];
-  private subscriptions!: Subscription[];
+  public giveAways: Giveaway[];
+  private subscriptions: Subscription[];
 
   public constructor(private contextService: ContextService, private apiService: ApiService) { }
 

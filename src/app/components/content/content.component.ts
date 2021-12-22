@@ -10,7 +10,7 @@ import { ApiService } from '../../services/api.service';
   styleUrls: ['./content.component.scss']
 })
 export class ContentComponent implements OnInit, OnDestroy {
-  public giveAways!: Giveaway[];
+  public giveAways: Giveaway[];
   private subscriptions: Subscription[] = [];
 
   public constructor(private apiService: ApiService) { }
