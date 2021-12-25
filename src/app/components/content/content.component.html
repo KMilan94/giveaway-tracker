@@ -1,7 +1,4 @@
 <div class="content" fxLayout="row">
-    <div class="content__fab" fxHide fxShow.sm fxShow.xs>
-        <app-fab-settings></app-fab-settings>
-    </div>
     <div class="content__filter" fxShow fxHide.sm fxHide.xs>
         <app-filter [giveaways]="giveAways" [layout]="'component'"></app-filter>
     </div>
@@ -9,7 +6,12 @@
         <app-sort [giveaways]="giveAways"></app-sort>
         <app-list [giveaways]="giveAways"></app-list>
     </div>
+
+    <!-- Floating buttons -->
+    <div class="content__fab left" fxHide fxShow.sm fxShow.xs>
+        <app-fab-settings></app-fab-settings>
+    </div>
+    <div class="content__fab right">
+        <app-fab-scroll-to-top></app-fab-scroll-to-top>
+    </div>
 </div>
-
-
-

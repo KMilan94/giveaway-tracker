@@ -22,6 +22,7 @@ import { ListItemComponent } from './components/content/list-item/list-item.comp
 import { EmptyListItemComponent } from './components/content/empty-list-item/empty-list-item.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { FabSettingsComponent } from './components/fab-settings/fab-settings.component';
+import { FabScrollToTopComponent } from './components/fab-scroll-to-top/fab-scroll-to-top.component';
 
 @NgModule({
     declarations: [
@@ -36,7 +37,8 @@ import { FabSettingsComponent } from './components/fab-settings/fab-settings.com
         ListItemComponent,
         EmptyListItemComponent,
         BannerComponent,
-        FabSettingsComponent
+        FabSettingsComponent,
+        FabScrollToTopComponent
     ],
     imports: [
         BrowserModule,
