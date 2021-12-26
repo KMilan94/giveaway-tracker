@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, delay, finalize, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 import { Giveaway } from '../models/giveaway';
@@ -19,6 +19,7 @@ export type Order = 'descending' | 'ascending';
   providedIn: 'root'
 })
 export class ApiService {
+  public loading$ = new BehaviorSubject<boolean>(false);
   public giveaways$ = new BehaviorSubject<Giveaway[]>([]);
   public selectedPlatform: PlatformType = 'all';
   public selectedType: GameType = 'all';
@@ -29,6 +30,8 @@ export class ApiService {
   }
 
   public fetchGiveaways(): void {
+    this.loading$.next(true);
+
     const sortParam = `sort-by=${this.selectedSort}`;
     const platformParam = this.selectedPlatform === 'all' ? '' : `&platform=${this.selectedPlatform}`;
     const typeParam = this.selectedType === 'all' ? '' : `&type=${this.selectedType}`;
@@ -38,7 +41,11 @@ export class ApiService {
         'x-rapidapi-host': `${environment.host}`,
         'x-rapidapi-key': `${environment.key}`
       }
-    }).subscribe((giveaways: Giveaway[] | EmptyResponse) => {
+    }).pipe(finalize(
+      () => {
+        this.loading$.next(false);
+      }
+    ), delay(1000)).subscribe((giveaways: Giveaway[] | EmptyResponse) => {
       const isEmpty = this.isResponseEmpty(giveaways);
       if (isEmpty) {
         this.giveaways$.next([]);
