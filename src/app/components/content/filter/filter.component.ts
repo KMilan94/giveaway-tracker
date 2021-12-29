@@ -1,4 +1,4 @@
-import { Component, Input, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 
 import { ApiService, PlatformType, GameType } from 'src/app/services/api.service';
 import { Giveaway } from '../../../models/giveaway';
@@ -17,7 +17,7 @@ export type Layout = 'component' | 'sidenav';
   templateUrl: './filter.component.html',
   styleUrls: ['./filter.component.scss']
 })
-export class FilterComponent {
+export class FilterComponent implements OnChanges {
 
   @Input() public giveaways: Giveaway[];
   @Input() public layout: Layout = 'component';

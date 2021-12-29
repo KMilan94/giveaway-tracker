@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ContextService } from 'src/app/services/context.service';
 
@@ -7,7 +7,7 @@ import { ContextService } from 'src/app/services/context.service';
   templateUrl: './fab-settings.component.html',
   styleUrls: ['./fab-settings.component.scss']
 })
-export class FabSettingsComponent {
+export class FabSettingsComponent implements OnInit, OnDestroy {
   public sidenavOpened = false;
   private subscriptions: Subscription[];
 
