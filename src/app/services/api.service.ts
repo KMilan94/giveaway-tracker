@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, delay, finalize, Observable } from 'rxjs';
+import { BehaviorSubject, finalize, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 import { Giveaway } from '../models/giveaway';
@@ -31,7 +31,6 @@ export class ApiService {
 
   public fetchGiveaways(): void {
     this.loading$.next(true);
-
     const sortParam = `sort-by=${this.selectedSort}`;
     const platformParam = this.selectedPlatform === 'all' ? '' : `&platform=${this.selectedPlatform}`;
     const typeParam = this.selectedType === 'all' ? '' : `&type=${this.selectedType}`;
@@ -41,11 +40,11 @@ export class ApiService {
         'x-rapidapi-host': `${environment.host}`,
         'x-rapidapi-key': `${environment.key}`
       }
-    }).pipe(finalize(
-      () => {
+    }).pipe(
+      finalize(() => {
         this.loading$.next(false);
-      }
-    ), delay(1000)).subscribe((giveaways: Giveaway[] | EmptyResponse) => {
+      })
+    ).subscribe((giveaways: Giveaway[] | EmptyResponse) => {
       const isEmpty = this.isResponseEmpty(giveaways);
       if (isEmpty) {
         this.giveaways$.next([]);

@@ -23,6 +23,7 @@ import { EmptyListItemComponent } from './components/content/empty-list-item/emp
 import { BannerComponent } from './components/banner/banner.component';
 import { FabSettingsComponent } from './components/fab-settings/fab-settings.component';
 import { FabScrollToTopComponent } from './components/fab-scroll-to-top/fab-scroll-to-top.component';
+import { ProgressSpinnerComponent } from './components/progress-spinner/progress-spinner.component';
 
 @NgModule({
     declarations: [
@@ -38,7 +39,8 @@ import { FabScrollToTopComponent } from './components/fab-scroll-to-top/fab-scro
         EmptyListItemComponent,
         BannerComponent,
         FabSettingsComponent,
-        FabScrollToTopComponent
+        FabScrollToTopComponent,
+        ProgressSpinnerComponent
     ],
     imports: [
         BrowserModule,

@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
-import { delay, skip, Subscription, take } from 'rxjs';
+import { skip, Subscription, take } from 'rxjs';
 import { getColorFromGameType } from 'src/app/data/rarity-colors';
 
 import { Giveaway } from 'src/app/models/giveaway';
@@ -31,7 +31,6 @@ export interface BannerItem {
   encapsulation: ViewEncapsulation.None
 })
 export class BannerComponent implements OnInit, OnDestroy {
-
   public bannerItems: BannerItem[];
   private subscriptions: Subscription[] = [];
 
